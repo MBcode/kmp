@@ -1,5 +1,6 @@
 ;bobak@balisp.org simple owl2km /testing
 (ql 's-xml)
+;could look4part of lib that runs off hooks/when it sees a tag
 (defun s-xml (fn)
   (s-xml:parse-xml-file fn))
 
@@ -18,6 +19,8 @@
 
 (trace owl-cls-p rdfs-sc-p sv-super)
 
+(defun rm-pound (s) (rm-str "#" s))
+
 (defun owl2km-cls (l)
   "s-xml lol w/class&super info"
   (let ((cp (collect-if #'owl-cls-p l))
@@ -25,7 +28,8 @@
     (when (and cp sp)
       (let ((cls (third-lv (first-lv cp)))
             (scl (third-lv (caar sp))))
-        (when (stringp scl) (sv-super cls (rm-str "#" scl)))
+       ;(when (stringp scl) (sv-super cls (rm-str "#" scl)))
+        (when (stringp scl) (sv-super cls (rm-pound scl)))
           ))))
 ;USER(1): (sv-super "data" "Thing")
 ;USER(2): (show- "data")
@@ -50,6 +54,12 @@
             (dmn (third-lv (caar dp)))
             (rng (third-lv (caar rp))))
         (format t "~%prop:~a has domain:~a and range:~a" prop dmn rng) ;for now,then set w/km fnc
+        ;(sn  has (instance-of (slot))  (domain (Thing)) (range (Thing)))
+        ;(sv-cls sn "slot") (sv sn "domain" ?d) ..
+        ;(sv-cls prop "slot")
+        (sv- prop "instance-of" "slot")
+        (sv- prop "domain" (rm-pound dmn))
+        (sv- prop "range" (rm-pound rng))
 ))))
 (trace owl-oprop-p rdfs-dmn-p rdfs-rng-p owl2km-prop)
 ; decide if a lol is cls or property, &just call the proper owl2km-... fnc
