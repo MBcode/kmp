@@ -63,3 +63,16 @@
 ))))
 (trace owl-oprop-p rdfs-dmn-p rdfs-rng-p owl2km-prop)
 ; decide if a lol is cls or property, &just call the proper owl2km-... fnc
+(defun owll2km (l)
+  "sexp of owl elt to km elt"
+  (let ((l1 (first-lv l)))
+    (cond ((owl-cls-p l1) (owl2km-cls l))
+          ((owl-oprop-p l1) (owl2km-prop l))
+          (t  (format t "~%~a full len:~a" l1 (len l))))))
+
+(defun owl2km (fn)
+  "owl file2km assertions"
+  (mapcar #'owll2km (s-xml fn)))
+
+(defun t1 (&optional (f "univ-bench.owl"))
+  (owl2km f))
