@@ -50,7 +50,7 @@
         (dp (collect-if #'rdfs-dmn-p l))
         (rp (collect-if #'rdfs-rng-p l)))
     (when (and pp dp rp)
-      (let ((prop (third-lv (first-lv pp)))
+      (let ((prop (rm-pound (third-lv (first-lv pp))))
             (dmn (third-lv (caar dp)))
             (rng (third-lv (caar rp))))
         (format t "~%prop:~a has domain:~a and range:~a" prop dmn rng) ;for now,then set w/km fnc
@@ -61,6 +61,7 @@
         (sv- prop "domain" (rm-pound dmn))
         (sv- prop "range" (rm-pound rng))
 ))))
+;will also need2capture heirarchical properties
 (trace owl-oprop-p rdfs-dmn-p rdfs-rng-p owl2km-prop)
 ; decide if a lol is cls or property, &just call the proper owl2km-... fnc
 (defun owll2km (l)
