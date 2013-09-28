@@ -1,6 +1,16 @@
 ;code that came w/KM components lib
+;refs:
+;http://www.cs.utexas.edu/users/mfkb/RKF/clib.html 
+;http://www.cs.utexas.edu/users/mfkb/RKF/trunktree/releases.cgi 
+;http://www.cs.utexas.edu/users/mfkb/RKF/tree/ 
+;http://web.archive.org/web/20110514122814/http://www.cs.utexas.edu/users/kbarker/papers/kcap01-content.pdf
+(defun load_lib (&optional (comp-path "components/core/"))
+  (let ((kmf (files-of-p comp-path #'(lambda (s) (suffixp ".km" s)))))
+    (mapcar- #'load-kb kmf))) ;could be one line
+
+;Had to rewrite what I found above w/the short fnc above 
 ;defun load-lib (&optional (comp-path "./components/"))
-(defun load_lib (&optional (comp-path "./components/"))
+(defun load_lib- (&optional (comp-path "./components/"))
   (let (result)
     (dolist (component (traverse-directory comp-path) result)
       (cond 
