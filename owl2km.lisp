@@ -49,6 +49,16 @@
 (defun rdfs-dprop-p (lol) (lol-eq-p lol '|owl|:|DatatypeProperty|))
 (defun g3v (l) (when (full l) (rm-pound (third-lv (caar l)))))
 
+;Might load 'component' sub-slots, and use those:
+;USER(2): (show- "Slot")
+;(Slot has 
+;  (subclasses (Relation
+;               Property
+;               KM-Slot-Group
+;               Interface-Slot))
+;  (superclasses (Thing))
+;  (instances  (....))) 
+
 ;even though each lol small, might be better2have1fnc that trys all -p instead of collecting
 
 (defun owl2km-prop (l)
@@ -74,7 +84,7 @@
         ;(sn  has (instance-of (slot))  (domain (Thing)) (range (Thing)))
         ;(sv-cls sn "slot") (sv sn "domain" ?d) ..
         ;(sv-cls prop "slot")
-        (sv- prop "instance-of" "Slot")
+        (sv- prop "instance-of" "Slot") ;could also use: Relation or Property
        ;(sv- prop "domain" (rm-pound dmn))
        ;(sv- prop "range" (rm-pound rng))
         (sv- prop "domain" dmn)
