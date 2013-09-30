@@ -49,6 +49,7 @@
 ;add DatatypeProperty
 (defun owl-dprop-p (lol) (lol-eq-p lol '|owl|:|DatatypeProperty|))
 (defun rdf-res-p (lol) (lol-eq-p lol '|rdf|:|resource|))
+(defun rdf-abt-p (lol) (lol-eq-p lol '|rdf|:|about|))
 
 (defun g3v (l) (when (full l) (rm-pound (third-lv (caar l)))))
 
@@ -73,8 +74,9 @@
         (iv (collect-if #'owl-inv-p l))
         (sp (collect-if #'rdfs-sprop-p l))
         (sd (collect-if #'owl-dprop-p l))
-        (rs (collect-if #'rdf-res-p l))
-        (ff (first-lv (first-lv l))) ;ins
+     ;  (rs (collect-if #'rdf-res-p l))
+     ;  (at (collect-if #'rdf-abt-p l))
+     ;  (ff (first-lv (first-lv l))) ;ins
         )
     (when (and pp dp rp) ;think domain&ranger always given in these owl files
       (let ((prop (rm-pound (third-lv (first-lv pp))))
@@ -85,8 +87,6 @@
             (inv (g3v iv))
             (sprop (g3v sp))
             (dprop (g3v sd))
-            (res (g3v rs))
-            (i (symbol-name ff))
             )
         (format t "~%prop:~a has domain:~a and range:~a" prop dmn rng) ;for now,then set w/km fnc
         ;(sn  has (instance-of (slot))  (domain (Thing)) (range (Thing)))
@@ -101,19 +101,40 @@
         (when inv (sv- prop "inverseProperty"  inv))
         (when sprop (sv- sprop "instance-of" prop))
         (when dprop (sv- sprop "instance-of" prop))
-        (when res (format t "~%ins:~a ~a" i res))
-        (when res (sv i res))
-))))
+    ))
+    ;+IGNORE
+    ;(when ff
+    ;  (let (
+    ;        (res (g3v rs))
+    ;        (abt (g3v at))
+    ;        (i (symbol-name ff))
+    ;        )
+    ;    (when res (format t "~%ins:~a ~a" i res))
+    ;    (when res (sv i res))))
+    ))
 (defun owl2km-ins (l)
   (let (
         (rs (collect-if #'rdf-res-p l))
+        (at (collect-if #'rdf-abt-p l))
         (ff (first-lv (first-lv l))) ;ins
         )
-    (when (and ff rs)
-      (let ( (res (g3v rs)) )
+    ;+IGNORE
+    ;(when (and ff rs)
+    ;  (let ( (res (g3v rs)) )
+    ;    (when res (format t "~%ins:~a ~a" i res))
+    ;    (when res (sv i res))))
+    (when ff
+      (let (
+            (res (g3v rs))
+            (abt (g3v at))
+            (i (symbol-name ff))
+            )
         (when res (format t "~%ins:~a ~a" i res))
         (when res (sv i res))
-        ))))
+        (when abt (format t "~%ins2:~a ~a" i abt))
+        (when abt (sv i abt))
+    ))
+    ))
 ;will also need2capture heirarchical properties
 ;((|owl|:|ObjectProperty| |rdf|:ID "headOf") (|rdfs|:|label| "is the head of")
 ; ((|rdfs|:|subPropertyOf| |rdf|:|resource| "#worksFor"))) 
