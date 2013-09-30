@@ -5,6 +5,7 @@
   (s-xml:parse-xml-file fn))
 
 (defvar *x* (s-xml "univ-bench.owl"))
+(defvar *i* (s-xml "University0_0.owl"))
 
 ;for owl files will get sets of list
 ;when see |owl|:|Class|  sv 2nd as ?class
@@ -43,10 +44,12 @@
 (defun owl-oprop-p (l) (eq (first-lv l) '|owl|:|ObjectProperty|))
 (defun rdfs-dmn-p (lol) (lol-eq-p lol '|rdfs|:|domain|))
 (defun rdfs-rng-p (lol) (lol-eq-p lol '|rdfs|:|range|))
-(defun rdfs-inv-p (lol) (lol-eq-p lol '|owl|:|inverseOf|))
+(defun owl-inv-p (lol) (lol-eq-p lol '|owl|:|inverseOf|))
 (defun rdfs-sprop-p (lol) (lol-eq-p lol '|rdfs|:|subPropertyOf|))
 ;add DatatypeProperty
-(defun rdfs-dprop-p (lol) (lol-eq-p lol '|owl|:|DatatypeProperty|))
+(defun owl-dprop-p (lol) (lol-eq-p lol '|owl|:|DatatypeProperty|))
+(defun rdf-res-p (lol) (lol-eq-p lol '|rdf|:|resource|))
+
 (defun g3v (l) (when (full l) (rm-pound (third-lv (caar l)))))
 
 ;Might load 'component' sub-slots, and use those:
@@ -60,15 +63,18 @@
 ;  (instances  (....))) 
 
 ;even though each lol small, might be better2have1fnc that trys all -p instead of collecting
+; also now that loading instances, need to set many triples w/in one lol
 
 (defun owl2km-prop (l)
   "s-xml lol w/class&super info"
   (let ((pp (collect-if #'owl-oprop-p l))
         (dp (collect-if #'rdfs-dmn-p l))
         (rp (collect-if #'rdfs-rng-p l))
-        (iv (collect-if #'rdfs-inv-p l))
+        (iv (collect-if #'owl-inv-p l))
         (sp (collect-if #'rdfs-sprop-p l))
-        (sd (collect-if #'rdfs-dprop-p l))
+        (sd (collect-if #'owl-dprop-p l))
+        (rs (collect-if #'rdf-res-p l))
+        (ff (first-lv (first-lv l))) ;ins
         )
     (when (and pp dp rp) ;think domain&ranger always given in these owl files
       (let ((prop (rm-pound (third-lv (first-lv pp))))
@@ -79,6 +85,8 @@
             (inv (g3v iv))
             (sprop (g3v sp))
             (dprop (g3v sd))
+            (res (g3v rs))
+            (i (symbol-name ff))
             )
         (format t "~%prop:~a has domain:~a and range:~a" prop dmn rng) ;for now,then set w/km fnc
         ;(sn  has (instance-of (slot))  (domain (Thing)) (range (Thing)))
@@ -93,7 +101,19 @@
         (when inv (sv- prop "inverseProperty"  inv))
         (when sprop (sv- sprop "instance-of" prop))
         (when dprop (sv- sprop "instance-of" prop))
+        (when res (format t "~%ins:~a ~a" i res))
+        (when res (sv i res))
 ))))
+(defun owl2km-ins (l)
+  (let (
+        (rs (collect-if #'rdf-res-p l))
+        (ff (first-lv (first-lv l))) ;ins
+        )
+    (when (and ff rs)
+      (let ( (res (g3v rs)) )
+        (when res (format t "~%ins:~a ~a" i res))
+        (when res (sv i res))
+        ))))
 ;will also need2capture heirarchical properties
 ;((|owl|:|ObjectProperty| |rdf|:ID "headOf") (|rdfs|:|label| "is the head of")
 ; ((|rdfs|:|subPropertyOf| |rdf|:|resource| "#worksFor"))) 
@@ -105,7 +125,9 @@
   (let ((l1 (first-lv l)))
     (cond ((owl-cls-p l1) (owl2km-cls l))
           ((owl-oprop-p l1) (owl2km-prop l))
-          (t  (format t "~%~a full len:~a" l1 (len l))))))
+          (t  (format t "~%~a full len:~a" l1 (len l))
+              (owl2km-ins l)
+              ))))
 
 (defun owl2km (fn)
   "owl file2km assertions"
