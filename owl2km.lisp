@@ -115,7 +115,7 @@
         (when sprop (sv- sprop "instance-of" prop))
         (when dprop (sv- sprop "instance-of" prop))
     ))
-    ;+IGNORE
+    ;#+IGNORE
     (when ff
       (let (
             (res (ll3v rs))
