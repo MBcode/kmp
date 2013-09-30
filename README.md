@@ -11,3 +11,9 @@ One of the MachineLearning pprj I use in (cl-)kme uses protege, and I could stor
 
 Algernon(tab)uses a lisp and is very KM like; I've heard from the lsw2 people abcl can be used.
 alg-tab also has a server.  Really just playing right now.
+
+Can load arff and have mlcl (machine-learning+(protege)KnowledgeAcquisition)
+Can load owl file/s like those in the LUBM benchmarks, which I mention in: http://bit.ly/TP8gfz
+Trial loading of a ttl file for data-cube data:
+https://code.google.com/p/publishing-statistical-data/source/browse/trunk/specs/src/main/vocab/cube.ttl?r=180
+So, moving toward better self described (numeric)data-sets, that can be used by a variety of learners
