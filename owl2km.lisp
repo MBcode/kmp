@@ -14,6 +14,11 @@
 (defun owl-cls-p (l) (eq (first-lv l) '|owl|:|Class|))
 (defun lol-eq-p (lol e)  
   (let ((l (first-lv lol))) (when (listp l) (eq (first-lv l) e))))
+(defun l-eq-p (l e)  
+  (when (listp l) 
+   ;(eq (first-lv l) e)
+    (eq (second-lv l) e)
+    ))
 ;(defun rdfs-sc-p (lol)  
 ;  (let ((l (first-lv lol))) (when (listp l) (eq (first-lv l) '|rdfs|:|subClassOf|))))
 (defun rdfs-sc-p (lol) (lol-eq-p lol '|rdfs|:|subClassOf|))
@@ -48,10 +53,18 @@
 (defun rdfs-sprop-p (lol) (lol-eq-p lol '|rdfs|:|subPropertyOf|))
 ;add DatatypeProperty
 (defun owl-dprop-p (lol) (lol-eq-p lol '|owl|:|DatatypeProperty|))
-(defun rdf-res-p (lol) (lol-eq-p lol '|rdf|:|resource|))
-(defun rdf-abt-p (lol) (lol-eq-p lol '|rdf|:|about|))
+;(defun rdf-res-p (lol) (lol-eq-p lol '|rdf|:|resource|))
+;(defun rdf-abt-p (lol) (lol-eq-p lol '|rdf|:|about|))
+(defun rdf_res-p (l) (l-eq-p l '|rdf|:|resource|))
+(defun rdf_abt-p (l) (l-eq-p l '|rdf|:|about|))
+(defun member- (a l) (when (fulll l) (member a l)))
+(defun rdf-res-p (l) (member- '|rdf|:|resource| l))
+(defun rdf-abt-p (l) (member- '|rdf|:|about| l))
 
 (defun g3v (l) (when (full l) (rm-pound (third-lv (caar l)))))
+;(defun l3v (l) (when (full l) (rm-pound (last-lv l))))
+(defun l3v (l) (when (full l) (rm-pound (last_lv l))))
+(defun ll3v (l) (when (full l) (rm-pound (last_lv (first-lv l)))))
 
 ;Might load 'component' sub-slots, and use those:
 ;USER(2): (show- "Slot")
@@ -74,9 +87,9 @@
         (iv (collect-if #'owl-inv-p l))
         (sp (collect-if #'rdfs-sprop-p l))
         (sd (collect-if #'owl-dprop-p l))
-     ;  (rs (collect-if #'rdf-res-p l))
-     ;  (at (collect-if #'rdf-abt-p l))
-     ;  (ff (first-lv (first-lv l))) ;ins
+        (rs (collect-if #'rdf_res-p l))
+        (at (collect-if #'rdf_abt-p l))
+        (ff (first-lv (first-lv l))) ;ins
         )
     (when (and pp dp rp) ;think domain&ranger always given in these owl files
       (let ((prop (rm-pound (third-lv (first-lv pp))))
@@ -103,38 +116,48 @@
         (when dprop (sv- sprop "instance-of" prop))
     ))
     ;+IGNORE
-    ;(when ff
-    ;  (let (
-    ;        (res (g3v rs))
-    ;        (abt (g3v at))
-    ;        (i (symbol-name ff))
-    ;        )
-    ;    (when res (format t "~%ins:~a ~a" i res))
-    ;    (when res (sv i res))))
-    ))
+    (when ff
+      (let (
+            (res (ll3v rs))
+            (abt (ll3v at))
+            (i (symbol-name ff))
+            )
+        (when res (format t "~%ins:~a ~a" i res))
+        (when res (sv i res))))
+  ))
+
 (defun owl2km-ins (l)
   (let (
         (rs (collect-if #'rdf-res-p l))
         (at (collect-if #'rdf-abt-p l))
+       ;(rs (rdf-res-p l))
+       ;(at (rdf-abt-p l))
+        (f1 (first-lv l)) ;ins
         (ff (first-lv (first-lv l))) ;ins
         )
-    ;+IGNORE
-    ;(when (and ff rs)
-    ;  (let ( (res (g3v rs)) )
-    ;    (when res (format t "~%ins:~a ~a" i res))
-    ;    (when res (sv i res))))
-    (when ff
+    ;when ff
+    (if (or ff f1)
       (let (
-            (res (g3v rs))
-            (abt (g3v at))
-            (i (symbol-name ff))
+           ;(res (g3v rs))
+           ;(abt (g3v at))
+            (res (ll3v rs))
+            (abt (ll3v at))
+            (i (symbol-name (or ff f1)))
             )
-        (when res (format t "~%ins:~a ~a" i res))
-        (when res (sv i res))
-        (when abt (format t "~%ins2:~a ~a" i abt))
-        (when abt (sv i abt))
-    ))
-    ))
+        (format t "~%~a," i)
+        (when res ;(format t "~%ins:~a ~a" i res)
+          (format t " ~a" res)
+          (when (len-gt res 1)
+            (sv i "resource" res)))
+        (when abt ;(format t "~%ins2:~a ~a" i abt)
+          (format t " ~a" abt)
+          (when (len-gt abt 1)
+            (sv i "about" abt)))
+      )
+      ;(format t "~%~a,~a full len:~a" i l1 (len l))
+      (format t ",~a full len:~a" (first-lv l) (len l))
+    )
+  ))
 ;will also need2capture heirarchical properties
 ;((|owl|:|ObjectProperty| |rdf|:ID "headOf") (|rdfs|:|label| "is the head of")
 ; ((|rdfs|:|subPropertyOf| |rdf|:|resource| "#worksFor"))) 
@@ -146,7 +169,7 @@
   (let ((l1 (first-lv l)))
     (cond ((owl-cls-p l1) (owl2km-cls l))
           ((owl-oprop-p l1) (owl2km-prop l))
-          (t  (format t "~%~a full len:~a" l1 (len l))
+          (t ;(format t "~%~a full len:~a" l1 (len l))
               (owl2km-ins l)
               ))))
 
