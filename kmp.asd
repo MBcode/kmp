@@ -24,6 +24,7 @@
  ;:depends-on (:ml)
   :components ((:module "src"
                 :serial t
+                ;(:file "owl2km") ;debug
                 :components (
                 ;(:file "kmp") ;defpackage kmp, &rest use it
                  (:file "km_2-5-33") 
