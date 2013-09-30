@@ -1,3 +1,6 @@
+;from https://code.google.com/p/publishing-statistical-data/source/browse/trunk/specs/src/main/vocab/cube.ttl?r=180
+;converted w/ttl2km.sed &a few hand edits for now, more on data-cube at:
+;                                      http://www.w3.org/TR/2013/WD-vocab-data-cube-20130312/
 ;@prefix (            ("www.w3.org/1999/02/22-rdf-syntax-ns#")))
 ;@prefix (           ("www.w3.org/2000/01/rdf-schema#"))
 ;@prefix owl:            ("www.w3.org/2002/07/owl#"))
