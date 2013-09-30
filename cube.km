@@ -1,0 +1,316 @@
+;@prefix (            ("www.w3.org/1999/02/22-rdf-syntax-ns#")))
+;@prefix (           ("www.w3.org/2000/01/rdf-schema#"))
+;@prefix owl:            ("www.w3.org/2002/07/owl#"))
+;;@prefix xsd:            ("www.w3.org/2001/XMLSchema#"))
+;@prefix skos:           ("www.w3.org/2004/02/skos/core#"))
+;;@prefix foaf:           ("xmlns.com/foaf/0.1/"))
+;@prefix scovo:          ("purl.org/NET/scovo#"))
+;@prefix void:           ("rdfs.org/ns/void#"))
+;@prefix (             ("purl.org/linked-data/cube#")))
+;;@prefix dcterms:        ("purl.org/dc/terms/"))
+
+;purl.org/linked-data/cube>
+  ; (localtop has (superclasses (Thing))
+;    owl:versionInfo "0.2";
+  ; (label ("The data cube vocabulary"))
+  ; (comment ("This vocabulary allows multi-dimensional data, such as statistics, to be published in RDF. It is based on the core information model from SDMX (and thus also DDI)."))
+;;    dcterms:created "2010-07-12"^^xsd:date;
+;;    dcterms:modified "2010-11-27"^^xsd:date;
+;;    dcterms:modified "2013-03-02"^^xsd:date;
+;;    dcterms:modified "2013-07-26"^^xsd:date;
+;    dcterms:title "Vocabulary for multi-dimensional (e.g. statistical) data publishing";
+;    dcterms:license ("www.opendatacommons.org/licenses/pddl/1.0/") ;
+;;    dcterms:contributor [foaf:mbox "richard@cyganiak.de"],
+;                        [foaf:mbox "jeni@jenitennison.com"],
+;                        [foaf:mbox "arofan.gregory@earthlink.net"],
+;                        [foaf:mbox "ian@epimorphics.com"],
+;                        [foaf:mbox "dave@epimorphics.com"];
+  ;)
+
+(DataSet has ;aClass, owl:Class;
+    (label ("Data set"))
+    (comment ("Represents a collection of observations, possibly organized into various slices, conforming to some common dimensional structure."))
+    (superclasses (Attachable))
+;    owl:equivalentClass scovo:Dataset;
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+(Observation has ;aClass, owl:Class;
+    (label ("Observation"))
+    (comment ("A single observation in the cube, may have one or more associated measured values"))
+    (superclasses (Attachable))
+;    owl:equivalentClass scovo:Item;
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(dataSet has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("data set"))
+    (comment ("indicates the data set of which this observation is a part"))
+    (domain (Observation))
+    (range (DataSet))
+;    owl:equivalentProperty scovo:dataset;
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(observation has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("observation"))
+    (comment ("indicates a observation contained within this slice of the data set"))
+    (domain (ObservationGroup))
+    (range (Observation))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(ObservationGroup has ;aClass, owl:Class;
+    (label ("Observation Group"))
+    (comment ("A, possibly arbitrary, group of observations."))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(observationGroup has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("observation group"))
+    (comment ("Indicates a group of observations. The domain of this property is left open so that a group may be attached to different resources and need not be restricted to a single DataSet"))
+    (range (ObservationGroup))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+(Slice has ;aClass, owl:Class;
+    (superclasses (ObservationGroup))
+    (label ("Slice"))
+    (comment ("Denotes a subset of a DataSet defined by fixing a subset of the dimensional values, component properties on the Slice"))
+    (superclasses (Attachable))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(slice has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (subPropertyOf (observationGroup))
+    (label ("slice"))
+    (comment ("Indicates a subset of a DataSet defined by fixing a subset of the dimensional values"))
+    (domain (DataSet))
+    (range (Slice))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+
+(Attachable has ;aClass, owl:Class;
+            (superclasses (Thing))
+    (label ("Attachable (abstract)"))
+    (comment ("Abstract superclass for everything that can have attributes and dimensions"))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(ComponentProperty has ;aClass, owl:Class;
+    (label ("Component property (abstract)"))
+    (superclasses (Property))
+    (comment ("Abstract super-property of all properties representing dimensions, attributes or measures"))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+(DimensionProperty has ;aClass, owl:Class;
+    (label ("Dimension property"))
+    (comment ("The class of components which represent the dimensions of the cube"))
+    (superclasses (ComponentProperty))
+    (superclasses (CodedProperty))
+;    owl:disjointWith (MeasureProperty;)
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+(AttributeProperty has ;aClass, owl:Class;
+    (label ("Attribute property"))
+    (comment ("The class of components which represent attributes of observations in the cube, e.g. unit of measurement"))
+    (superclasses (ComponentProperty))
+;    owl:disjointWith (MeasureProperty;)
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+(MeasureProperty has ;aClass, owl:Class;
+    (label ("Measure property"))
+    (comment ("The class of components which represent the measured value of the phenomenon being observed"))
+    (superclasses (ComponentProperty))
+;    owl:disjointWith (AttributeProperty;)
+;    owl:disjointWith (DimensionProperty;)
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+(CodedProperty has ;aClass, owl:Class;
+    (label ("Coded property"))
+    (superclasses (ComponentProperty))
+    (comment ("Superclass of all coded ComponentProperties"))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+;(measureType a (DimensionProperty, (Property;)) ;hand fix for now
+(measureType has (superclasses (DimensionProperty))
+    (label ("measure type"))
+    (comment ("Generic measure dimension, the value of this dimension indicates which measure (from the set of measures in the DSD) is being given by the obsValue (or other primary measure)"))
+    (range  (MeasureProperty))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+(DataStructureDefinition has ;aClass, owl:Class;
+    (label ("Data structure definition"))
+    (comment ("Defines the structure of a DataSet or slice"))
+    (superclasses (ComponentSet ))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+;structure has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+(cube_structure has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("structure"))
+    (comment ("indicates the structure to which this data set conforms"))
+    (domain (DataSet))
+    (range (DataStructureDefinition))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+(component has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("component specification"))
+    (comment ("indicates a component specification which is included in the structure of the dataset"))
+    (domain (DataStructureDefinition))
+    (range (ComponentSpecification))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+(ComponentSpecification has ;aClass, owl:Class ;
+    (label ("Component specification"))
+    (comment ("Used to define properties of a component (attribute, dimension etc) which are specific to its usage in a DSD."))
+    (superclasses (ComponentSet ))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(ComponentSet has ;aClass, owl:Class;
+    (label ("Component set"))
+    (comment ("Abstract class of things which reference one or more ComponentProperties"))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+(ComponentSpecification has (superclasses (ComponentSet)) );by hand for now
+(SliceKey               has (superclasses (ComponentSet)) );by hand for now
+
+(componentProperty has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("component"))
+    (comment ("indicates a ComponentProperty (i.e. attribute/dimension) expected on a DataSet, or a dimension fixed in a SliceKey"))
+    (domain (ComponentSet))
+    (range (ComponentProperty))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(order has (instance-of (Slot)) ;aProperty, owl:DatatypeProperty;
+    (label ("order"))
+    (comment ("indicates a priority order for the components of sets with this structure, used to guide presentations - lower order numbers come before higher numbers, un-numbered components come last"))
+    (domain (ComponentSpecification))
+;    (range  xsd:int)
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(componentRequired has (instance-of (Slot)) ;aProperty, owl:DatatypeProperty;
+    (label ("component required"))
+    (comment ("Indicates whether a component property is required (true) or optional (false) in the context of a DSD. Only applicable
+    to components correspond to an attribute. Defaults to false (optional)."))
+    (domain (ComponentSpecification))
+;    (range  xsd:boolean)
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(componentAttachment has (instance-of (Slot)) ;aProperty;
+    (label ("component attachment"))
+    (comment ("Indicates the level at which the component property should be attached, this might an (DataSet, Slice or qb:Observation, or a qb:MeasureProperty."))
+    (domain (ComponentSpecification))
+    (range  (Thing))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(dimension has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("dimension"))
+    (comment ("An alternative to (componentProperty which makes explicit that the component is a dimension"))
+    (subPropertyOf (componentProperty))
+    (range (DimensionProperty))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(measure has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("measure"))
+    (comment ("An alternative to (componentProperty which makes explicit that the component is a measure"))
+    (subPropertyOf (componentProperty))
+    (range (MeasureProperty))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(attribute has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("attribute"))
+    (comment ("An alternative to (componentProperty which makes explicit that the component is a attribute"))
+    (subPropertyOf (componentProperty))
+    (range (AttributeProperty))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(measureDimension has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("measure dimension"))
+    (comment ("An alternative to (componentProperty which makes explicit that the component is a measure dimension"))
+    (subPropertyOf (componentProperty))
+    (range (DimensionProperty))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+(SliceKey has ;aClass, owl:Class;
+    (label ("Slice key"))
+    (comment ("Denotes a subset of the component properties of a DataSet which are fixed in the corresponding slices"))
+    (superclasses (ComponentSet ))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(sliceStructure has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("slice structure"))
+    (comment ("indicates the sub-key corresponding to this slice"))
+    (domain (Slice))
+    (range  (SliceKey))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(sliceKey has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("slice key"))
+    (comment ("indicates a slice key which is used for slices in this dataset"))
+    (domain (DataStructureDefinition))
+    (range  (SliceKey))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+
+(concept has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("concept"))
+    (comment ("gives the concept which is being measured or indicated by a ComponentProperty"))
+    (domain (ComponentProperty))
+    (range (Thing))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(codeList has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("code list"))
+    (comment ("gives the code list associated with a CodedProperty"))
+    (domain (CodedProperty))
+  ; (range  [ owl:unionOf ((Thing)Scheme skos:Collection (HierarchicalCodeList)] ))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(HierarchicalCodeList has ;aClass, owl:Class;
+    (superclasses (CodeList))
+    (label ("Hierarchical Code List"))
+    (comment ("Represents a generalized hierarchy of concepts which can be used for coding. The hierarchy is defined by one or more roots together with a property which relates concepts in the hierarchy to thier child concept)  The same concepts may be members of multiple hierarchies provided that different (parentChildProperty values are used for each hierarchy."))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(hierarchyRoot has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (domain (HierarchicalCodeList))
+    (comment   ("Specifies a root of the hierarchy. A hierarchy may have multiple roots but must have at least one."))
+    (isDefinedBy ("purl.org/linked-data/cube"))
+   )
+
+(parentChildProperty has (instance-of (Slot)) ;aProperty, owl:ObjectProperty;
+    (label ("parent-child property"))
+    (domain (HierarchicalCodeList))
+    (range (Property))
+    (comment   ("Specifies a property which relates a parent concept in the hierarchy to a child concept."))
+    (isDefinedBy ("purl.org/linked-data/cube")) 
+    )

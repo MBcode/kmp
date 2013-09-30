@@ -126,6 +126,10 @@
         (when res (sv i res))))
   ))
 
+(defun second-if-space (s)
+  (let ((sl (split s)))
+    (or (second-lv sl) (first-lv sl))))
+
 (defun owl2km-ins (l)
   (let (
         (rs (collect-if #'rdf-res-p l))
@@ -153,7 +157,8 @@
           (format t " ~a" abt)
           (when (len-gt abt 1)
             ;(sv i "about" abt)
-            (sv-cls (underscore_  (clean-slash abt)) i)
+           ;(sv-cls (underscore_  (clean-slash abt)) i)
+            (sv-cls (second-if-space  (clean-slash abt)) i)
             ))
       )
       ;(format t "~%~a,~a full len:~a" i l1 (len l))
@@ -179,9 +184,17 @@
   "owl file2km assertions"
   (mapcar #'owll2km (s-xml fn)))
 
+;test fncs,  load LUBM benchmark into KM, so can test queries
 (defun t1 (&optional (f "univ-bench.owl"))
   "load http://swat.cse.lehigh.edu/onto/univ-bench.owl"
   (owl2km f))
 (defun t2 (&optional (f "University0_0.owl"))
   "load http://swat.cse.lehigh.edu/projects/lubm/University0_0.owl"
   (owl2km f))
+(defun t3 () 
+  (format t "~%load defualt lubm ontology~%")
+  (t1)
+  (format t "~%load defualt lubm instances~%")
+  (t2)
+  (format t "~%lets see what it looks like:~%")
+  (taxonomy))
