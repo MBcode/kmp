@@ -17,7 +17,7 @@
 ;  (let ((l (first-lv lol))) (when (listp l) (eq (first-lv l) '|rdfs|:|subClassOf|))))
 (defun rdfs-sc-p (lol) (lol-eq-p lol '|rdfs|:|subClassOf|))
 
-(trace owl-cls-p rdfs-sc-p sv-super)
+;(trace owl-cls-p rdfs-sc-p sv-super)
 
 (defun rm-pound (s) (rm-str "#" s))
 
@@ -98,7 +98,7 @@
 ;((|owl|:|ObjectProperty| |rdf|:ID "headOf") (|rdfs|:|label| "is the head of")
 ; ((|rdfs|:|subPropertyOf| |rdf|:|resource| "#worksFor"))) 
  
-(trace owl-oprop-p rdfs-dmn-p rdfs-rng-p owl2km-prop)
+;(trace owl-oprop-p rdfs-dmn-p rdfs-rng-p owl2km-prop)
 ; decide if a lol is cls or property, &just call the proper owl2km-... fnc
 (defun owll2km (l)
   "sexp of owl elt to km elt"
@@ -112,4 +112,8 @@
   (mapcar #'owll2km (s-xml fn)))
 
 (defun t1 (&optional (f "univ-bench.owl"))
+  "load http://swat.cse.lehigh.edu/onto/univ-bench.owl"
+  (owl2km f))
+(defun t2 (&optional (f "University0_0.owl"))
+  "load http://swat.cse.lehigh.edu/projects/lubm/University0_0.owl"
   (owl2km f))
