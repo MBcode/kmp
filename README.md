@@ -17,3 +17,5 @@ Can load owl file/s like those in the LUBM benchmarks, which I mention in: http:
 Trial loading of a ttl file for data-cube data:
 https://code.google.com/p/publishing-statistical-data/source/browse/trunk/specs/src/main/vocab/cube.ttl?r=180
 So, moving toward better self described (numeric)data-sets, that can be used by a variety of learners
+
+http://lispinsummerprojects.org/ started in kme then cl-kme then some of that ended up here /too
