@@ -10,6 +10,7 @@
     ;(sv-cls cls Thing) ;but not as an is,as subclass
     (sv-cls fn cls)
     (sv-al fn attr) ;but need2turn2alst 1st /so not so embedded
+    (sv-al fn (mapcar #'cons attr (arff-data fn))) ;try this &code2dump2 xlispstat/vist too
     ))
 
 (trace get-arff)
