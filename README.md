@@ -19,3 +19,5 @@ https://code.google.com/p/publishing-statistical-data/source/browse/trunk/specs/
 So, moving toward better self described (numeric)data-sets, that can be used by a variety of learners
 
 http://lispinsummerprojects.org/ started in kme then cl-kme then some of that ended up here /too
+
+Made http://cliki.net/machine%20learning and plan further work, here and elsewhere.
