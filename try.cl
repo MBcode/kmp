@@ -41,3 +41,4 @@
 ;lots of other reasoning/aid beyond KM; have considered ML via workflow or even blackboar;;gbbopen
 (ql 'gbbopen)
 (ql 'caveman) ;(or wuwei toot), to get a nicer front end on notional.no-ip.org
+;trying connections to octave/R/etc, &general slime/swank as well
