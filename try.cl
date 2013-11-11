@@ -88,3 +88,5 @@
 ;>>>>>> 1c57083a0cb68ad37f8daefd84df5e315c7da9f6
 ;dual-boot updates caused this problem, just from a pull&push, which was unexpected
 ;also I got another instances of an update not showing up in the calendar(graph)log
+;TRY:going more anytime, data-driven(rule-based)ETL,..data-viz/disc,incl some algo choice
+; also makes it easy to disribute,&to change course along way vs.after long batch jobs
