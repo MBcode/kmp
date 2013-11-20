@@ -1,8 +1,10 @@
 http://lispinsummerprojects.org/rules 
 suggests:
  
-http://creativecommons.org/licenses/by/3.0/deed.en_GB 
+http://choosealicense.com/ licenses/ eg. MIT
 which I am ok with for anything that I have rights to license
+&mention http://creativecommons.org/licenses/by/3.0/deed.en_GB 
+ which I'm not sure of it's applicability
  
 though I ask that general additions also be made public
  
