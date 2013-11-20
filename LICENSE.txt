@@ -1,0 +1,8 @@
+http://lispinsummerprojects.org/rules 
+suggests:
+ 
+http://creativecommons.org/licenses/by/3.0/deed.en_GB 
+which I am ok with for anything that I have rights to license
+ 
+though I ask that general additions also be made public
+ 
