@@ -1,0 +1,103 @@
+would there be a way to use cl-arff to create some km starting structure
+ actually a clos2km would be even more useful   /or some mix
+https://github.com/MBcode/LispUtils/blob/master/srt.lisp then cl-nlp &/or km-nl stuff
+http://swat.cse.lehigh.edu/onto/univ-bench.owl
+got owl cls get relation from owl cls then load lubm and try qrys
+ 
+slot hierarchies coming next dont worry about getting back2owl yet
+ 
+http://image.slidesharecdn.com/linkedup-panel-final-130913073439-phpapp02/95/slide-29-638.jpg?1380097900 
+look at rdf owl libs instead of replicating all of it
+ 
+/Users/bobak/dwn/ai/ont/ka/cyc/src/CycQL-2.0/src/org/opencyc/sparql sparql2-cycL might be similar
+ 
+http://www.data2semantics.org/2013/09/24/winner-of-the-open-science-award-at-ecmlpkdd-2013/ 
+get enough of owl file in that can try: http://swat.cse.lehigh.edu/projects/lubm/queries-sparql.txt 
+/Users/bobak/dwn/ai/ont/ka/cyc/src/gloze-read-only
+ 
+owl file mostly loads but no ins and need2trans a sparql qry
+ 
+if can do show a lil arff and datacube for dm too
+ 
+http://swat.cse.lehigh.edu/projects/lubm/University0_0.owl
+not yet getting ins in properly /look at libs &/or fix/finish mine
+ 
+/Users/bobak/dwn/lang/lsp/code/project/src/sicl 2help translate the sparql qrys
+ 
+http://www.w3.org/TR/vocab-data-cube/ 
+λ▶<196 s29local: /kmq/kmp> egrep -v "^#" cube.ttl | sed -f ttl2km.sed|cat>cube.km
+ 
+xlispstat _vista reads in pmml like files
+ 
+might do simple sicl qry and use linq/km-qry after that
+
+/Users/bobak/dwn/ai/ont/sw/sparql/lubm
+https://github.com/lisp/de.setf.resource/blob/master/n3.lisp  for turtle
+https://github.com/dirtyvagabond/factql 
+more easily get ustruct-txt into triples
+ 
+looked at clj-hdf5  /sci-db    /but R-sci-db would be better  so rcl/etc
+ 
+try a mq lib or at least redis w pubsub
+ 
+http://lod2.eu/BlogPost/1770-linked-data-excited-interest-in-the-data-mining-community.html 
+arff 2 xls4vista also helpful
+ 
+/Users/bobak/dwn/ai/disc/dm/app/pmml/src/psi wrap ml-lsp as service&can use others as well
+/Users/bobak/dwn/ai/disc/dm/app/pmml/src/psi/client try2do this in lsp
+
+    /Users/bobak/dwn/lang/lsp/lisps/var/xls/vista-5.0.5/examples
+/Users/bobak/dwn/lang/lsp/lisps/var/xls/vista-5.0.5/data 
+ /Users/bobak/dwn/lang/lsp/code/project/src/cl-arff-parser 
+    (defmethod print-object ((arff arff) stream)  ;make a print-data
+ 
+/Users/bobak/dwn/ai/ont/sw/ml/doc/www.ke.tu-darmstadt.de/resources/fegelod
+ 
+/Users/bobak/dwn/ai/disc/ml/weka/autoweka/autoweka-0.4
+ 
+/Users/bobak/dwn/lang/lsp/code/project/src/SWCLOS/LUBM
+ 
+defunc if func w same ret4val and no side-effect then cache
+ 
+lsp client(drakma) for nrepl coord2 clj wrap of java libs
+ 
+wf and blackboards almost just2ui views
+ 
+take some data/pull in/etl nlp/concept/tag see form&how to shape&suggest how2model
+ have starting stat/viz out to a caveman page
+@narrativesci 10h
+RT @NickJewell: BusinessDiscovery “Narration” as a key capability of next-gen BI - amen. @narrativesci is the absolute leader in this space 
+https://github.com/Data2Semantics/TabLinker   for converting manually annotated Microsoft Excel 
+ workbooks to the RDF Data Cube vocabulary. http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html
+https://github.com/Data2Semantics/d2s-tools.git 
+http://nirvacana.com/thoughts/wp-content/uploads/2013/07/RoadToDataScientist1.png 
+http://lisp-univ-etc.blogspot.com/2013/09/nltk-22-conditional-frequency.html 
+http://www.slideshare.net/mohsentaheriyan/a-graphbased-approach-to-learn-semantic-descriptions-of-data-sources 
+http://simplystatistics.org/2013/10/25/back-to-the-future-of-statistical-software-futureofstats 
+http://arxiv.org/abs/1310.7367 http://arxiv.org/pdf/1310.7367v1.pdf 
+http://blinkdb.org/ 
+http://www.w3.org/wiki/WebSchemas/Datasets 
+start a process that will comm back2bb via zmq
+ 
+can use py r +libs eg plyr
+ 
+/Users/bobak/dwn/lang/lsp/code/project/src/encline
+ 
+http://www.isi.edu/expect/expect-homepage.html 
+http://web.archive.org/web/20060203094556/http://www.isi.edu/integration/ 
+http://www.isi.edu/integration/ 
+ql wilbur works
+ 
+http://basekb.com/ 
+			TAXONOMIC OPERATIONS 
+build-rule
+ 
+km partition like both ver of filter
+ 
+read write file-array
+ 
+(defun apply-recursive (function structure) 
+λ▶<120 n23local: /kmq/kmp> /Users/bobak/dwn/ai/disc/ml/bn/PPAMLKickoffOverviewSlides.pdf 
+ add probalistic bits2km 
+enhanced Stochastic Lambda Calculus (eSLC) as intermediate representation 
+https://github.com/aaltodsg/instans 
