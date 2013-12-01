@@ -100,4 +100,6 @@ read write file-array
 λ▶<120 n23local: /kmq/kmp> /Users/bobak/dwn/ai/disc/ml/bn/PPAMLKickoffOverviewSlides.pdf 
  add probalistic bits2km 
 enhanced Stochastic Lambda Calculus (eSLC) as intermediate representation 
-https://github.com/aaltodsg/instans 
+https://github.com/aaltodsg/instans streaming sparql, using rete
+
+https://github.com/MBcode/LispUtils latest linux sbcl gave prob so had2pul fnc out of utils
