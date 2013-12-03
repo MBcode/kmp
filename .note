@@ -103,3 +103,7 @@ enhanced Stochastic Lambda Calculus (eSLC) as intermediate representation
 https://github.com/aaltodsg/instans streaming sparql, using rete
 
 https://github.com/MBcode/LispUtils latest linux sbcl gave prob so had2pul fnc out of utils
+encode:
+http://1.bp.blogspot.com/-0_3sLXeZPMU/UR3qK4X_sGI/AAAAAAAAA7A/mvMBDZrOFJc/s1600/algorithms.png 
+need/use: n-samples, predicting:(category/quantity/structure),[cat:labeled?,#cat-known?],txt-data
+ @least get simple decisiontree w/these from problem-data_description,&map2possibleAlgorithms2try
