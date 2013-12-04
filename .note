@@ -107,3 +107,5 @@ encode:
 http://1.bp.blogspot.com/-0_3sLXeZPMU/UR3qK4X_sGI/AAAAAAAAA7A/mvMBDZrOFJc/s1600/algorithms.png 
 need/use: n-samples, predicting:(category/quantity/structure),[cat:labeled?,#cat-known?],txt-data
  @least get simple decisiontree w/these from problem-data_description,&map2possibleAlgorithms2try
+ http://challenges.2014.eswc-conferences.org/RecSys 
+http://www.slideshare.net/jamet123/10-best-practices-in-operational-analytics-6871966 
