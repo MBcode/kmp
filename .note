@@ -109,3 +109,4 @@ need/use: n-samples, predicting:(category/quantity/structure),[cat:labeled?,#cat
  @least get simple decisiontree w/these from problem-data_description,&map2possibleAlgorithms2try
  http://challenges.2014.eswc-conferences.org/RecSys 
 http://www.slideshare.net/jamet123/10-best-practices-in-operational-analytics-6871966 
+mq have probs of late, but will look@ https://github.com/cpc26/netclos 
