@@ -1,0 +1,6 @@
+;(al 'cl-kb)
+(lkm3)
+(load "load-lib.lisp" :print t)
+(load_lib)
+(taxonomy)
+;(load "owl2km.lisp" :print t)

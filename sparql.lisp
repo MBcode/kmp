@@ -1,6 +1,8 @@
 ;https://github.com/daimrod/dbpedia-sparql.git
 ;(in-package #:dbpedia-sparql)
-
+(require :drakma) ;(ql 'drakma)
+(require :cl-json) ;(ql 'cl-json)
+;rest in: ld5.cl
 (defparameter *http-proxy-server* nil)  ; hostname only! no http://
 (defparameter *http-proxy-port* 80)
 
