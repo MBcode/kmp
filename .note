@@ -125,3 +125,5 @@ http://www.cs.utexas.edu/~ml/publications/area/120/qualitative_modeling_and_diag
 http://www.cs.utexas.edu/~ml/papers/qdocs-ijcai95sub.pdf       :..sfs algry qsim-install
 http://link.springer.com/chapter/10.1007%2F3-540-46135-3_48#page-1 ;cnstr, screamer/kr..
 https://www.researchgate.net/publication/2812075_A_Qualitative_Model_of_the_Space_Shuttle_Reaction_Control_System  using qsim
+use something like https://github.com/MBcode/LispUtils/blob/master/tnc.cl to mine htm2 km onto
+ like it did w/sparql2km  ;consider using chtml-matcher but also look for a form of rdf
