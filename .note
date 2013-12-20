@@ -128,3 +128,8 @@ https://www.researchgate.net/publication/2812075_A_Qualitative_Model_of_the_Spac
 use something like https://github.com/MBcode/LispUtils/blob/master/tnc.cl to mine htm2 km onto
  like it did w/sparql2km  ;consider using chtml-matcher but also look for a form of rdf
     start w/cl-html-parse not as robuts, but better doc/examples 
+KRSS2-syntax starts w/:(define-primitive-concept ..)&might be easy2ingest into KM
+in 1st example start w/:g/http:..elite.polito.it.ontologies.dogont.owl./s//'/g 
+    :g/http:..www.w3.org.2002.07.owl./s//'owl_/g 
+/kmq/kmp> wc d*cl 680    5335   92400 dogkr.cl  but most are not simple class assignments:
+λ▶<64 d19local: /kmq/kmp> grep and do*cl|wc 511    4828   81714 
