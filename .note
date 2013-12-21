@@ -137,4 +137,5 @@ in 1st example start w/:g/http:..elite.polito.it.ontologies.dogont.owl./s//'/g
 /kmq/kmp> wc d*cl 680    5335   92400 dogkr.cl  but most are not simple class assignments:
 λ▶<64 d19local: /kmq/kmp> grep and do*cl|wc 511    4828   81714 
 /Users/bobak/dwn/lang/lsp/ai/ut/mfkb/km/kmq/kmp/tag project-haystack.org/tag /download tags.csv2km
+ will try to keep from having to parse html to get the rest of the description
  
