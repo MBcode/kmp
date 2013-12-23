@@ -138,4 +138,7 @@ in 1st example start w/:g/http:..elite.polito.it.ontologies.dogont.owl./s//'/g
 λ▶<64 d19local: /kmq/kmp> grep and do*cl|wc 511    4828   81714 
 /Users/bobak/dwn/lang/lsp/ai/ut/mfkb/km/kmq/kmp/tag project-haystack.org/tag /download tags.csv2km
  will try to keep from having to parse html to get the rest of the description
- 
+would agraph be better than some present code for reading owl/?  swclos(2) wilbur ..  /commonlogic
+look at earlier sparql-w.lisp again too, think I went off some xml/s before already
+(ql 'wilbur) then https://github.com/lisp/de.setf.resource/blob/master/READMES/wilbur.md  work..use
+will try twinql again too/but still seems less ready
