@@ -12,6 +12,10 @@
   "km assert"
  (assert  (:triple  (sbj tr) (prd tr) (obj tr)))) 
 
+(defun s-spo (tr) ;get this going
+  "km set"
+ (sv (sbj tr) (prd tr) (obj tr))) 
+
 (defvar wilbur:*db* nil)
 (defvar *tr* nil)
 
@@ -23,6 +27,7 @@
  (setq *tr*  (wilbur:query !"http://datagraph.org/jhacker/#self" nil nil))
  (p-spo (first *tr*))
  ;s:!"http://datagraph.org/jhacker/#self" p:!rdf:type o:!foaf:Person
+ ;fix/finish these
  (a-spo (first *tr*))
- ;fix/finish this one
+ (s-spo (first *tr*))
 )
