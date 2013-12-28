@@ -144,3 +144,5 @@ look at earlier sparql-w.lisp again too, think I went off some xml/s before alre
  W(21): ;now could just assert triples2km   or use cl-rdfxml 
 will try twinql again too/but still seems less ready  ;still just cl-rdfxml then right to km..
 still look@/Users/bobak/Documents/www/wilbur-rdf.sourceforge.net &previous sparql/etc work
+Ora Lassila ‏@gotsemantics 11h; would be interesting to try:
+OINK #RDF & #SemanticWeb data browser now running successfully on my @Raspberry_Pi 
