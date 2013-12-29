@@ -4,14 +4,27 @@
 (ql 'cl-ppcre)
 (ql 'wilbur)  ;could also try cl-rdfxml
 (defun sfs (s) 
+ "safe symbol/node"
   (typecase s
         (symbol  (symbol-name s))
-        (wilbur:node  (wilbur:node s))  
+        (wilbur:node  (wilbur:node-uri s))  
         (t  s)))
 
-(defun sbj (tr) (wilbur:triple-subject (sfs tr)))
-(defun prd (tr) (wilbur:triple-predicate (sfs tr)))
-(defun obj (tr) (wilbur:triple-object (sfs tr)))
+(defun uri-end (u)
+ "only part after the #"
+  (let ((u2 (explode= u #\#)))
+    (if (len-gt u2 1) (second u2) u)))
+
+(defun sfu (nd)
+ "safe uri, get node name after #"
+  (uri-end (sfs nd)))
+
+;(defun sbj (tr) (wilbur:triple-subject (sfs tr)))
+;(defun prd (tr) (wilbur:triple-predicate (sfs tr)))
+;(defun obj (tr) (wilbur:triple-object (sfs tr)))
+(defun sbj (tr) (sfu (wilbur:triple-subject  tr)))
+(defun prd (tr) (sfu (wilbur:triple-predicate  tr)))
+(defun obj (tr) (sfu (wilbur:triple-object  tr)))
 
 (defun p-spo (tr)
  (format t "~%s:~a p:~a o:~a~%" (sbj tr) (prd tr) (obj tr))) 
