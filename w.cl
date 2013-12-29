@@ -1,16 +1,26 @@
+;load rdf/etc w/wilbur then assert to km; bobak@balisp.org
 (lu)
 (lkm2)
 (ql 'cl-ppcre)
 (ql 'wilbur)  ;could also try cl-rdfxml
-(defun sbj (tr) (wilbur:triple-subject tr))
-(defun prd (tr) (wilbur:triple-predicate tr))
-(defun obj (tr) (wilbur:triple-object tr))  
+(defun sfs (s) 
+  (typecase s
+        (symbol  (symbol-name s))
+        (wilbur:node  (wilbur:node s))  
+        (t  s)))
+
+(defun sbj (tr) (wilbur:triple-subject (sfs tr)))
+(defun prd (tr) (wilbur:triple-predicate (sfs tr)))
+(defun obj (tr) (wilbur:triple-object (sfs tr)))
+
 (defun p-spo (tr)
  (format t "~%s:~a p:~a o:~a~%" (sbj tr) (prd tr) (obj tr))) 
 
 (defun a-spo (tr) ;get this going
   "km assert"
- (assert  (:triple  (sbj tr) (prd tr) (obj tr)))) 
+;(assert  (:triple  (sbj tr) (prd tr) (obj tr)))
+ (km-assert  (:triple  (sbj tr) (prd tr) (obj tr)))
+ ) 
 
 (defun s-spo (tr) ;get this going
   "km set"
