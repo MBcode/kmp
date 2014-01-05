@@ -151,3 +151,4 @@ finish wilbur2km, but if current pprj has little rdf/etc, then back2 hmt|txt->km
 Ora Lassila ‏@gotsemantics 15h
 Excited to be working on Piglet and OINK again: http://www.lassila.org/blog/archive/2013/12/revisiting_pigl_1.html … 
 notice use of sqlite,reminded me2add: https://github.com/MBcode/LispUtils/blob/master/tdb.cl
+looked at http://any23.apache.org/ &some other java frameworks/bigger&in some ways more trouble
