@@ -1,8 +1,12 @@
 ;load rdf/etc w/wilbur then assert to km; bobak@balisp.org
-(lu)
-(lkm2)
+ 
+;from my .sbclrc:
+(lu)  ;utils
+(lkm2) ;km +utils
+;libs:
 (ql 'cl-ppcre)
 (ql 'wilbur)  ;could also try cl-rdfxml
+
 (defun sfs (s) 
  "safe symbol/node"
   (typecase s
@@ -21,12 +25,13 @@
   (last_lv (explode= (pound-on u) #\/)))
 
 (defun sfu (nd)
- "safe uri, get node name after #"
+ "safe uri, get node name after #|/ "
   (uri-end (sfs nd)))
 
-;(defun sbj (tr) (wilbur:triple-subject (sfs tr)))
-;(defun prd (tr) (wilbur:triple-predicate (sfs tr)))
-;(defun obj (tr) (wilbur:triple-object (sfs tr)))
+;later assert rest of url once under every new symbol
+;  then deal w/collisions once that is a problem
+
+;was just using sfs
 (defun sbj (tr) (sfu (wilbur:triple-subject  tr)))
 (defun prd (tr) (sfu (wilbur:triple-predicate  tr)))
 (defun obj (tr) (sfu (wilbur:triple-object  tr)))
@@ -36,10 +41,10 @@
 
 (defun a-spo (tr) ;get this going
   "km assert  triple"
-;(assert  (:triple  (sbj tr) (prd tr) (obj tr)))
-;(km-assert  (:triple  (sbj tr) (prd tr) (obj tr)))
-;(ka (str-cat  "(:triple " (sbj tr) " " (prd tr) " " (obj tr) ")"))
-(let ((as (format nil "(:triple ~a ~a ~a)" (sbj tr) (prd tr) (obj tr))))
+ ;(assert  (:triple  (sbj tr) (prd tr) (obj tr)))
+ ;(km-assert  (:triple  (sbj tr) (prd tr) (obj tr)))
+ ;(ka (str-cat  "(:triple " (sbj tr) " " (prd tr) " " (obj tr) ")"))
+ (let ((as (format nil "(:triple ~a ~a ~a)" (sbj tr) (prd tr) (obj tr))))
   (format t "~%will-assert:~a~%" as) ;dbg
    (ka as)
  ))
@@ -59,7 +64,8 @@
  (setq *tr*  (wilbur:query !"http://datagraph.org/jhacker/#self" nil nil))
  (p-spo (first *tr*))
  ;s:!"http://datagraph.org/jhacker/#self" p:!rdf:type o:!foaf:Person
- ;fix/finish these
+ ;fix/finish these,  both ~work now
  (a-spo (first *tr*))
  (s-spo (first *tr*))
+ ;mapcar #'.-spo *tr*    ;brings out other val probs2fix soon
 )
