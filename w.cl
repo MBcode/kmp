@@ -10,10 +10,15 @@
         (wilbur:node  (wilbur:node-uri s))  
         (t  s)))
 
-(defun uri-end (u)
+;defun uri-end  (u)
+(defun pound-on (u)
  "only part after the #"
   (let ((u2 (explode= u #\#)))
     (if (len-gt u2 1) (second u2) u)))
+ 
+(defun uri-end (u)
+ "after # or last / "
+  (last_lv (explode= (pound-on u) #\/)))
 
 (defun sfu (nd)
  "safe uri, get node name after #"
@@ -30,10 +35,14 @@
  (format t "~%s:~a p:~a o:~a~%" (sbj tr) (prd tr) (obj tr))) 
 
 (defun a-spo (tr) ;get this going
-  "km assert"
+  "km assert  triple"
 ;(assert  (:triple  (sbj tr) (prd tr) (obj tr)))
- (km-assert  (:triple  (sbj tr) (prd tr) (obj tr)))
- ) 
+;(km-assert  (:triple  (sbj tr) (prd tr) (obj tr)))
+;(ka (str-cat  "(:triple " (sbj tr) " " (prd tr) " " (obj tr) ")"))
+(let ((as (format nil "(:triple ~a ~a ~a)" (sbj tr) (prd tr) (obj tr))))
+  (format t "~%will-assert:~a~%" as) ;dbg
+   (ka as)
+ ))
 
 (defun s-spo (tr) ;get this going
   "km set"
