@@ -1,3 +1,17 @@
+;project-haystack.org WoT example,  bobak@computer.org
+;=User notification:
+;*Pump nozzle clogged by >50%
+;*Pump power increaded to compensate
+;*Expected loss in process quality: 10%
+;*Maintenance required in the next 10 days
+;=WoT Sensor: Unusual flow value detected - pump problem?
+;*Contact pressure and temp sensors, collect information
+;*Contact pump, download pump data sheet
+;*Estimate cloggins: Algorithm pressure, temp, flow calculated over pump data sheet
+;*Contact pumpt to increase power
+;*Send maintenance request to user
+;
+;=continue to flesh out below,in service of the problem above
 ;http://project-haystack.org/download
 ;cut -d',' -f2 tags.csv|sortu
 ; check out upper struct

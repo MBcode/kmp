@@ -152,3 +152,9 @@ Ora Lassila ‏@gotsemantics 15h
 Excited to be working on Piglet and OINK again: http://www.lassila.org/blog/archive/2013/12/revisiting_pigl_1.html … 
 notice use of sqlite,reminded me2add: https://github.com/MBcode/LispUtils/blob/master/tdb.cl
 looked at http://any23.apache.org/ &some other java frameworks/bigger&in some ways more trouble
+but still clj libs &abcl: https://gist.github.com/fsmunoz/5850260  
+/Users/bobak/dwn/lang/lsp/ai/prot/svn.mumble.net:8080/svn/lsw/trunk/protege/net.mumble.protege.abcl/abcl.jar
+_semantic-wf https://github.com/varunratnakar/wings in lisp would be cool
+have cl+j close to working, &other than sbcl have ecl &mkcl as possible lisps
+Get back to ld6.cl fleshing out &allow for protege editing, probably w/algernon-tab 
+added prob description to top of tags.km    ;km can handle data-driven/change,as well as.. &fz rsm
