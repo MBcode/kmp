@@ -158,3 +158,6 @@ _semantic-wf https://github.com/varunratnakar/wings in lisp would be cool
 have cl+j close to working, &other than sbcl have ecl &mkcl as possible lisps
 Get back to ld6.cl fleshing out &allow for protege editing, probably w/algernon-tab 
 added prob description to top of tags.km    ;km can handle data-driven/change,as well as.. &fz rsm
+ edit/viz also possible w/wilbur-oink like, incl. svg-graph-viz (via web)as well
+can have km ins ref the wilbur ins once vs. saving all vals again
+_don't forget github.com/turbolent sicl n3   ../etc

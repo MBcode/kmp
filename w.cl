@@ -24,9 +24,15 @@
  "after # or last / "
   (last_lv (explode= (pound-on u) #\/)))
 
+(defun clean_se_ (s)
+  (under_ (clean_se s))
+) 
+
 (defun sfu (nd)
  "safe uri, get node name after #|/ "
-  (uri-end (sfs nd)))
+ (rm-str "#"  ;fix: have obj ret a #".."
+   (clean_se_ 
+    (uri-end (sfs nd)))))
 
 ;later assert rest of url once under every new symbol
 ;  then deal w/collisions once that is a problem
