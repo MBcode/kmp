@@ -159,5 +159,9 @@ have cl+j close to working, &other than sbcl have ecl &mkcl as possible lisps
 Get back to ld6.cl fleshing out &allow for protege editing, probably w/algernon-tab 
 added prob description to top of tags.km    ;km can handle data-driven/change,as well as.. &fz rsm
  edit/viz also possible w/wilbur-oink like, incl. svg-graph-viz (via web)as well
-can have km ins ref the wilbur ins once vs. saving all vals again
-_don't forget github.com/turbolent sicl n3   ../etc
+can have km ins ref the wilbur ins once vs. saving all vals again ;just a list of wilbur3's
+_don't forget github.com/turbolent sicl n3   ../etc   ;hypercat ...   ;&diff exmpl ontologies
+looking again at alljoyn/now allseen, &0mq ref, incl net/srvc-discovery
+bonjour.. https://github.com/wiseman/cl-zeroconf.git
+want2look@ https://github.com/davelambert/clojure-powerloom 
+could I have lisa.sf.net match on wilbur instances; so like jess w/swrl rules;& instans like too
