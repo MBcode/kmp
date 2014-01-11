@@ -12,6 +12,16 @@
 ;*Send maintenance request to user
 ;
 ;=continue to flesh out below,in service of the problem above
+;=pump
+; http://www.automation.com/pdf_articles/aex_hi_report.pdf 
+;fig4:                ;fig1+2 xml: centpump rev  flow/head
+;PumpAssembly
+; has Pump
+;      has Stream (fluid-temp)
+; has Driver (type,manuf)
+;      has Motor (enclosure)
+; has Coupling (model)
+;=
 ;http://project-haystack.org/download
 ;cut -d',' -f2 tags.csv|sortu
 ; check out upper struct
