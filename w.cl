@@ -62,12 +62,20 @@
 (defvar wilbur:*db* nil)
 (defvar *tr* nil)
 
-(defun tdb ()
- "test &have globals around2play w/"
- (setq wilbur:*db*  (wilbur::make-instance 'wilbur:db))
+(defun lq1 () 
  (wilbur:db-load wilbur:*db* "http://datagraph.org/jhacker/foaf.rdf")
  (wilbur:db-load wilbur:*db* "http://notional.no-ip.org/foaf.rdf")
  (setq *tr*  (wilbur:query !"http://datagraph.org/jhacker/#self" nil nil))
+)
+(defun lq2 () 
+ (wilbur:db-load wilbur:*db* "http://notional.no-ip.org/DUL.owl")
+ (setq *tr*  (wilbur:query  nil nil nil))
+)
+
+(defun tdb ()
+ "test &have globals around2play w/"
+ (setq wilbur:*db*  (wilbur::make-instance 'wilbur:db))
+ (lq1) ;work on lq2
  (p-spo (first *tr*))
  ;s:!"http://datagraph.org/jhacker/#self" p:!rdf:type o:!foaf:Person
  ;fix/finish these,  both ~work now
