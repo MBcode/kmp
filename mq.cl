@@ -4,6 +4,8 @@
 ;;need: http://web.archive.org/web/*/http://www.cs.rice.edu/~froydnj/lisp/packer.tar.gz
 (al 'packer)
 (ql 'iterate) ;still some problems here
+(use-package :iterate)
+;could write a defpackage
 
 (defun server ()
   "Bind to socket and wait to receive a message.  After receipt,
@@ -37,7 +39,8 @@
   (zmq:with-context (ctx 1)
     (zmq:with-socket (socket ctx zmq:pub)
       (zmq:bind socket "tcp://lo:5555")
-      (iterate:iter (iterate:for msg-id iterate:from 0)
+      (iter (for msg-id from 0)
+      ;iterate:iter (iterate:for msg-id iterate:from 0)
             (zmq:send
              socket
              (make-instance
