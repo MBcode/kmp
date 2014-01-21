@@ -169,3 +169,5 @@ https://github.com/lisp/de.setf.amqp This is intended as the base for a distribu
 https://github.com/keithj/cl-genomic has powerloom loader, &more@ https://github.com/keithj
 https://code.google.com/p/lmf/wiki/GuidePublishingLinkedData use tools as src/client off of
 https://github.com/mark-watson/loving-common-lisp/blob/master/src/solr-client.lisp also w/in lmf
+http://ns.inria.fr/ast/sql/index.html https://github.com/julianhyde/optiq rDB mapping&more
+project/src/malecoli/malecoli/mlcl-cbr cl-rsm-fuzzy,lisa.sf.net(~swrlJessTab);code.google.com/p/lsw2
