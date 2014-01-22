@@ -153,7 +153,7 @@ Excited to be working on Piglet and OINK again: http://www.lassila.org/blog/arch
 notice use of sqlite,reminded me2add: https://github.com/MBcode/LispUtils/blob/master/tdb.cl
 looked at http://any23.apache.org/ &some other java frameworks/bigger&in some ways more trouble
 but still clj libs &abcl: https://gist.github.com/fsmunoz/5850260  
-/Users/bobak/dwn/lang/lsp/ai/prot/svn.mumble.net:8080/svn/lsw/trunk/protege/net.mumble.protege.abcl/abcl.jar
+prot/svn.mumble.net:8080/svn/lsw/trunk/protege/net.mumble.protege.abcl/abcl.jar
 _semantic-wf https://github.com/varunratnakar/wings in lisp would be cool
 have cl+j close to working, &other than sbcl have ecl &mkcl as possible lisps
 Get back to ld6.cl fleshing out &allow for protege editing, probably w/algernon-tab 
@@ -171,3 +171,6 @@ https://code.google.com/p/lmf/wiki/GuidePublishingLinkedData use tools as src/cl
 https://github.com/mark-watson/loving-common-lisp/blob/master/src/solr-client.lisp also w/in lmf
 http://ns.inria.fr/ast/sql/index.html https://github.com/julianhyde/optiq rDB mapping&more
 project/src/malecoli/malecoli/mlcl-cbr cl-rsm-fuzzy,lisa.sf.net(~swrlJessTab);code.google.com/p/lsw2
+http://xach.livejournal.com/322259.html started w/Sunil's:
+ http://www.youtube.com/watch?v=75Ubq_WU8Hc&list=PLa5ilFtyOSl9JUhr_7oXqTfTxSxsid2Vo&index=15 
+trying: wiki.opensemanticframework.org/index.php/Category:Installation_Guide 
