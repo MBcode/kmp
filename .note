@@ -154,7 +154,10 @@ notice use of sqlite,reminded me2add: https://github.com/MBcode/LispUtils/blob/m
 looked at http://any23.apache.org/ &some other java frameworks/bigger&in some ways more trouble
 but still clj libs &abcl: https://gist.github.com/fsmunoz/5850260  
 prot/svn.mumble.net:8080/svn/lsw/trunk/protege/net.mumble.protege.abcl/abcl.jar ;j depends
-http://lsw2.googlecode.com/svn/branches/bona/owl2/ see if I can get this w/o abcl
+ http://lsw2.googlecode.com/svn/branches/bona/owl2/ (&opennlp) see if I can get this w/o abcl
+  nope, riddled w/: find-java-class  so like much of clj (a useful veneer over the java world)
+    i've done it before w/opennlp&many others in: https://github.com/MBcode/km3
+   still consider, esp. if it makes working w/LMF easier ;though a more modular/srv approach ok2
 _semantic-wf https://github.com/varunratnakar/wings in lisp would be cool
 have cl+j close to working, &other than sbcl have ecl &mkcl as possible lisps
 Get back to ld6.cl fleshing out &allow for protege editing, probably w/algernon-tab 
@@ -169,10 +172,12 @@ could I have lisa.sf.net match on wilbur instances; so like jess w/swrl rules;& 
 https://github.com/lisp/de.setf.amqp This is intended as the base for a distributed semantic store.
 https://github.com/keithj/cl-genomic has powerloom loader, &more@ https://github.com/keithj
 https://code.google.com/p/lmf/wiki/GuidePublishingLinkedData use tools as src/client off of
-https://github.com/mark-watson/loving-common-lisp/blob/master/src/solr-client.lisp also w/in lmf
+ https://github.com/mark-watson/loving-common-lisp/blob/master/src/solr-client.lisp also w/in lmf
+ listed under: https://www.w3.org/2001/sw/wiki/Category:Rule_Reasoner
 http://ns.inria.fr/ast/sql/index.html https://github.com/julianhyde/optiq rDB mapping&more
 project/src/malecoli/malecoli/mlcl-cbr cl-rsm-fuzzy,lisa.sf.net(~swrlJessTab);code.google.com/p/lsw2
 http://xach.livejournal.com/322259.html started w/Sunil's:
  http://www.youtube.com/watch?v=75Ubq_WU8Hc&list=PLa5ilFtyOSl9JUhr_7oXqTfTxSxsid2Vo&index=15 
 trying: wiki.opensemanticframework.org/index.php/Category:Installation_Guide 
 attempto: github.com/tkuhn/AceRules http://svn.cs.rpi.edu/svn/tayloj/cl-ace !wrk/but would be fun
+ controlled-english, see for(more understandable)I/O ;owl nl ..
