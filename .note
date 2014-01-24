@@ -153,7 +153,8 @@ Excited to be working on Piglet and OINK again: http://www.lassila.org/blog/arch
 notice use of sqlite,reminded me2add: https://github.com/MBcode/LispUtils/blob/master/tdb.cl
 looked at http://any23.apache.org/ &some other java frameworks/bigger&in some ways more trouble
 but still clj libs &abcl: https://gist.github.com/fsmunoz/5850260  
-prot/svn.mumble.net:8080/svn/lsw/trunk/protege/net.mumble.protege.abcl/abcl.jar
+prot/svn.mumble.net:8080/svn/lsw/trunk/protege/net.mumble.protege.abcl/abcl.jar ;j depends
+http://lsw2.googlecode.com/svn/branches/bona/owl2/ see if I can get this w/o abcl
 _semantic-wf https://github.com/varunratnakar/wings in lisp would be cool
 have cl+j close to working, &other than sbcl have ecl &mkcl as possible lisps
 Get back to ld6.cl fleshing out &allow for protege editing, probably w/algernon-tab 
@@ -174,3 +175,4 @@ project/src/malecoli/malecoli/mlcl-cbr cl-rsm-fuzzy,lisa.sf.net(~swrlJessTab);co
 http://xach.livejournal.com/322259.html started w/Sunil's:
  http://www.youtube.com/watch?v=75Ubq_WU8Hc&list=PLa5ilFtyOSl9JUhr_7oXqTfTxSxsid2Vo&index=15 
 trying: wiki.opensemanticframework.org/index.php/Category:Installation_Guide 
+attempto: github.com/tkuhn/AceRules http://svn.cs.rpi.edu/svn/tayloj/cl-ace !wrk/but would be fun
