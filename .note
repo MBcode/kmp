@@ -191,3 +191,6 @@ added: https://github.com/MBcode/LispUtils/blob/master/acl2profiling.lsp & stati
  want a way to do js/xml/rdf tree's &create linked objs as I do;like some pkgs do but w/km
 st-json: defgeneric read-json (in &optional junk-allowed-p) ;handles :null ;look@json-ld
 util_mb: (pkg-who-calls "CL-RDFXML") produces: http://notional.no-ip.org/cl-rdfxml.svg 
+LarKC3  "The Large Knowledge Collider" v3 service-oriented platform for massive distributed in-
+complete reasoning, aiming at overcoming the current limitations on large-scale semantic reasoning.
+@ http://cl.servehttp.com &will get LMF@ micc.servehttp.com &PowerLOOM@ lisp.servehttp.com
