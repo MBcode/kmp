@@ -189,6 +189,7 @@ look back@the lispML&some ext:py/R/jl/etc,&breakdwns,incl: jubatus
 spent time w/saved web-pages via OneTab &now TabCloud,not great4extreme usrs like myself/want api..
 added: https://github.com/MBcode/LispUtils/blob/master/acl2profiling.lsp & static-analysis.lisp
  want a way to do js/xml/rdf tree's &create linked objs as I do;like some pkgs do but w/km
+ protege xml ingest, linked objs lsp ingest via ml: malecoli/cl-kb (ld2.cl 3. 4.)
 st-json: defgeneric read-json (in &optional junk-allowed-p) ;handles :null ;look@json-ld
 util_mb: (pkg-who-calls "CL-RDFXML") produces: http://notional.no-ip.org/cl-rdfxml.svg 
 LarKC3  "The Large Knowledge Collider" v3 service-oriented platform for massive distributed in-
