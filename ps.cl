@@ -166,3 +166,6 @@
 ; compilation unit finished
 ;   caught 2 ERROR conditions
 ;   caught 2 WARNING conditions 
+;
+;maybe i'll try(the next1) http://www.adampetersen.se/articles/lispweb.htm
+;&/or  lispwebtales.ppenev.com 
