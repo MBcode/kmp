@@ -202,3 +202,4 @@ look@workflow work(data-driven); &: https://github.com/xively/libxively comm als
 use lfarm which uses lparallel but want2go2 specific workers, not just a pool;cl-mpi,cl-pvm mq:w.cl
 also want web viz, play w/some js too: ps.cl but get back to the focus of importing for kr&r 
  then on the mapping from slightly different description hierarchies(once they are determined).
+  really should look at descriptions to be used, and tool up just enough to get them going.
