@@ -207,3 +207,7 @@ might make a kmst km semantic things; can show mapping example when needed; romi
  want tree to triple translation now;see P S O, at start, w/P O pairs w/in the {}s
  could use: http://www.cliki.net/trivial-configuration-parser too
 www.cliki.net/semantic%20web http://franz.com/agraph/support/documentation/v4/lisp-reference.html 
+Get more bits going&ready to move over to kmst in a coherent way. more, try&plan cycle, going
+No bayes/prob/uncert.. here, but in cl-kme/src/sys.lisp, pull out more from it.
+Pull more through this staging ground, and then to a more focused ST(description for reasoning,
+ around different goals, that have to be laid out a little more clearly).
