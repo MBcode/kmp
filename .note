@@ -214,3 +214,11 @@ Pull more through this staging ground, and then to a more focused ST(description
 Look@not just websrv but websocket, actor/lfarm/parallel etc
 Ontology of Data Mining (OntoDM) would be useful for the(earlier)reasoning about ML use idea
 https://bioportal.bioontology.org/ontologies/ONTODM-CORE 558K Feb 17 18:24 OntoDM.owl
+in end want kn-resources into triples: http://nlp2rdf.org/ http://linguistics.okfn.org/
+ http://persistence.uni-leipzig.org/nlp2rdf/ https://github.com/NLP2RDF stanbol lmf connection
+ also github.com/percyliang/sempre.git  ;framenet many uses incl train-set4finding relations
+http://en.wikipedia.org/wiki/Category:Semantic_Web ;found km component-lib framenet sumo connection
+ want ability to describe event relationships&more, but need (problem) descriptions 
+If not sumo, always have component lib loaded, so have nice start for semantic/service description
+see tax.txt, as it should be sumo related, it should be a safe place to get started &have epectation
+ of interop as time goes by. Start w/a small exmpl&pull out re work(ers),&show similarity/look4coop

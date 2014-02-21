@@ -12,16 +12,6 @@
 ;*Send maintenance request to user
 ;
 ;=continue to flesh out below,in service of the problem above
-;=pump
-; http://www.automation.com/pdf_articles/aex_hi_report.pdf 
-;fig4:                ;fig1+2 xml: centpump rev  flow/head
-;PumpAssembly
-; has Pump
-;      has Stream (fluid-temp)
-; has Driver (type,manuf)
-;      has Motor (enclosure)
-; has Coupling (model)
-;=
 ;http://project-haystack.org/download
 ;cut -d',' -f2 tags.csv|sortu
 ; check out upper struct
@@ -90,6 +80,16 @@
 (device has (superclasses (Marker)))
 (device1Ref has (superclasses (Ref)))
 (device2Ref has (superclasses (Ref)))
+(directZone has (superclasses (Marker)))
+(dis has (superclasses (Str)))
+(discharge has (superclasses (Marker)))
+(dualDuct has (superclasses (Marker)))
+(effective has (superclasses (Marker)))
+(efficiency has (superclasses (Marker)))
+(elecMeter has (superclasses (Marker)))
+(elecMeterLoad has (superclasses (Ref)))
+(elecMeterRef has (superclasses (Ref)))
+ (elecPanel has (superclasses (sys+equip)))
 (directZone has (superclasses (Marker)))
 (dis has (superclasses (Str)))
 (discharge has (superclasses (Marker)))
@@ -188,16 +188,6 @@
 (temp has (superclasses (Marker)))
 (tripleDuct has (superclasses (Marker)))
 (tz has (superclasses (Str)))
-(unit has (superclasses (Str)))
-(valve has (superclasses (Marker)))
-(variableVolume has (superclasses (Marker)))
- (vav has (superclasses (equip)))
-(vav has (superclasses (Marker)))
-(every vav has 
- (dualDuct ((a dualDuct)))
- (ahuRef ((a ahu)))
-)
-;hvac: always specified to mark as an HVAC asset
 ;dualDuct: if the VAV has separate cool deck and hot deck ductwork. Dual duct VAVs should have two sets of discharge points identified with the coldDeck and hotDeck tags
 ;ahuRef: to associate the VAV with its supply AHU
 (vavZone has (superclasses (Marker)))
