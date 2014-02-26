@@ -223,3 +223,4 @@ If not sumo, always have component lib loaded, so have nice start for semantic/s
 see tax.txt, as it should be sumo related, it should be a safe place to get started &have epectation
  of interop as time goes by. Start w/a small exmpl&pull out re work(ers),&show similarity/look4coop
 try to get http://www.w3.org/TR/vocab-data-cube/ aligned w/component/top onto
+want datacube aligned w/sumo, &a way of storage that isn't a triple/#
