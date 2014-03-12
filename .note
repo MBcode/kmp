@@ -224,3 +224,5 @@ see tax.txt, as it should be sumo related, it should be a safe place to get star
  of interop as time goes by. Start w/a small exmpl&pull out re work(ers),&show similarity/look4coop
 try to get http://www.w3.org/TR/vocab-data-cube/ aligned w/component/top onto
 want datacube aligned w/sumo, &a way of storage that isn't a triple/#
+http://vim.sourceforge.net/scripts/script.php?script_id=2219 not great, evil/emacs ok, clean upEdit
+ ing, &get slime/swank going; lbt helpful, but want remote editing as well
