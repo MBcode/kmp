@@ -60,3 +60,4 @@
                                 ">L" (zmq:msg-data-as-array query) ))))
             (when (= 0 (mod msg-id 10000))
               (print msg-id) ))))))) 
+;Component PACKER not found -fix 
