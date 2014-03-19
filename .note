@@ -227,3 +227,4 @@ want datacube aligned w/sumo, &a way of storage that isn't a triple/#
 http://vim.sourceforge.net/scripts/script.php?script_id=2219 not great, evil/emacs ok, clean upEdit
  ing, &get slime/swank going; lbt helpful, but want remote editing as well
 liked v2 now try: https://github.com/kraison/vivace-graph-v3 use ccl but sb-concurrency depenancy
+ but even linux version will compile w/accepts, now need to get through exmpl like w/v2
