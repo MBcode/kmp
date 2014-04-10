@@ -228,3 +228,6 @@ http://vim.sourceforge.net/scripts/script.php?script_id=2219 not great, evil/ema
  ing, &get slime/swank going; lbt helpful, but want remote editing as well
 liked v2 now try: https://github.com/kraison/vivace-graph-v3 use ccl but sb-concurrency depenancy
  but even linux version will compile w/accepts, now need to get through exmpl like w/v2
+https://github.com/mark-watson/lisp_practical_semantic_web still useful code here
+http://thomaswdinsmore.com/2014/04/09/automated-predictive-modeling re2 kn-based ml ideas; tweeted 
+ by ppl I should talk w/more @DataRobot an we automate predictive modeling? http://bit.ly/1hBDVN8 
