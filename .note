@@ -231,3 +231,9 @@ liked v2 now try: https://github.com/kraison/vivace-graph-v3 use ccl but sb-conc
 https://github.com/mark-watson/lisp_practical_semantic_web still useful code here
 http://thomaswdinsmore.com/2014/04/09/automated-predictive-modeling re2 kn-based ml ideas; tweeted 
  by ppl I should talk w/more @DataRobot an we automate predictive modeling? http://bit.ly/1hBDVN8 
+ DataRobot DataRobot   Automated Predictive Modeling  http://bit.ly/1sFwb65  
+cl-bayes using cells using lparallel would be cool
+http://www.meetup.com/USF-Seminar-Series-in-Analytics/events/162383562/ reminds me use of sim models
+ MDP uses, though,me: can fit these, if can't make sim of diff granulatiry, as 4some decscions don't
+ need high fidelity at all.   ;;http://en.wikipedia.org/wiki/Surrogate_model
+Surrogate modeling, can even tell if can predict, or need to run another model(Uise it)&learn from2.
