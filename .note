@@ -244,3 +244,10 @@ http://www.cs.cmu.edu/~fgcozman/Research/InterchangeFormat/ http://www.pr-owl.or
 http://www.csee.umbc.edu/~ypeng/Publications/2005/BayesOWL-BookChapter.pdf
 http://nlp2rdf.org/ http://aksw.org/Projects/NIF.html v http://en.wikipedia.org/wiki/AIML
 _get relationships so they can all more easily work together.
+
+"OpenML is an open ecosystem for machine learning" - anyone using this? Has good sharing / transparency potential http://expdb.cs.kuleuven.be/expdb/  
+/ml/src> git_ https://github.com/openml/OpenML.git
+"OpenML is an [ML] experiment sharing platform.." part of my orig vision/will check out
+## How does it work?
+OpenML works much like a data mining challenge platform, such as Kaggle, except that solutions are constructed collaboratively, with anybody free to build on other people's work 
+Would also like: https://github.com/cantino/huginn Think of it as Yahoo! Pipes plus IFTTT on your own server
