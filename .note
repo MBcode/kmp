@@ -251,3 +251,4 @@ _get relationships so they can all more easily work together.
 ## How does it work?
 OpenML works much like a data mining challenge platform, such as Kaggle, except that solutions are constructed collaboratively, with anybody free to build on other people's work 
 Would also like: https://github.com/cantino/huginn Think of it as Yahoo! Pipes plus IFTTT on your own server
+Plan to add notes from http://swank.stanford.edu/ soon; getting a bit from the speakers now.
