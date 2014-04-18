@@ -243,6 +243,7 @@ http://en.wikipedia.org/wiki/Predictive_Model_Markup_Language
 http://www.cs.cmu.edu/~fgcozman/Research/InterchangeFormat/ http://www.pr-owl.org/ 
 http://www.csee.umbc.edu/~ypeng/Publications/2005/BayesOWL-BookChapter.pdf
 http://nlp2rdf.org/ http://aksw.org/Projects/NIF.html v http://en.wikipedia.org/wiki/AIML
+en.wikipedia.org/wiki/Rule_Interchange_Format /v www.brcommunity.com/b597.php DecisionModelNotation
 _get relationships so they can all more easily work together.
 
 "OpenML is an open ecosystem for machine learning" - anyone using this? Has good sharing / transparency potential http://expdb.cs.kuleuven.be/expdb/  
@@ -253,3 +254,7 @@ OpenML works much like a data mining challenge platform, such as Kaggle, except 
 Would also like: https://github.com/cantino/huginn Think of it as Yahoo! Pipes plus IFTTT on your own server
 Plan to add notes from http://swank.stanford.edu/ soon; getting a bit from the speakers now.
  great set of talks, I will have to add notes from them and my own; see more from AI2&SantaCruz
+ keep original txt(for >1parse/annote/use), see clustered/grouping and use them; use all constraints
+  sat http://en.wikipedia.org/wiki/Integer_programming use domain Kn, though no1suggested:
+  http://en.wikipedia.org/wiki/Explanation-based_learning ..
+  stat &/or logic but w/probalistic ability ; mixing ;but not much on fully mixing cyc.. w/statLearn
