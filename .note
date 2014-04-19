@@ -246,12 +246,18 @@ http://nlp2rdf.org/ http://aksw.org/Projects/NIF.html v http://en.wikipedia.org/
 en.wikipedia.org/wiki/Rule_Interchange_Format /v www.brcommunity.com/b597.php DecisionModelNotation
 _get relationships so they can all more easily work together.
 
+Some vocabs of interest especially 
+ www.w3.org/TR/vocab-data-cube &any of the places I can see it's application: e.g.
+ CFP - LinkQS: Workshop on Linking The Quantified Self - (LQS 2014) #LinkedData #QuantifiedSelf http://linkqsws.wordpress.com/ 
+
 "OpenML is an open ecosystem for machine learning" - anyone using this? Has good sharing / transparency potential http://expdb.cs.kuleuven.be/expdb/  
 /ml/src> git_ https://github.com/openml/OpenML.git
 "OpenML is an [ML] experiment sharing platform.." part of my orig vision/will check out
 ## How does it work?
 OpenML works much like a data mining challenge platform, such as Kaggle, except that solutions are constructed collaboratively, with anybody free to build on other people's work 
+
 Would also like: https://github.com/cantino/huginn Think of it as Yahoo! Pipes plus IFTTT on your own server
+
 Plan to add notes from http://swank.stanford.edu/ soon; getting a bit from the speakers now.
  great set of talks, I will have to add notes from them and my own; see more from AI2&SantaCruz
  keep original txt(for >1parse/annote/use), see clustered/grouping and use them; use all constraints
