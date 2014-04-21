@@ -246,6 +246,9 @@ http://nlp2rdf.org/ http://aksw.org/Projects/NIF.html v http://en.wikipedia.org/
 en.wikipedia.org/wiki/Rule_Interchange_Format /v www.brcommunity.com/b597.php DecisionModelNotation
 _get relationships so they can all more easily work together.
 
+Look for something that could pull some of the markup above w/suggested vocabs as needed,
+ Get a schema that could get them to play well together as needed.
+
 Some vocabs of interest especially 
  www.w3.org/TR/vocab-data-cube &any of the places I can see it's application: e.g.
  CFP - LinkQS: Workshop on Linking The Quantified Self - (LQS 2014) #LinkedData #QuantifiedSelf http://linkqsws.wordpress.com/ 
