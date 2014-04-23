@@ -272,3 +272,20 @@ Even though aided ML/datamining was a 1st thought, I'd rather do something along
  kind of data-fusion that could even be useful in a semantic-desktop much less aided datamining.
 I'll look at the new kde and old nepomuk etc, getting my searchs/emails/twitter etc together.
 http://semanticweb.com/new-kde-software-compilation-released-improved-semantic-search_b42535
+use: http://cl-twitter.blogspot.com/ mongo interaction Start w/ubuntu nepomuk install &?.. 
+shared-desktop-ontologies - shared ontologies for semantic searching
+.. 
+semanticscuttle - Self-hosted and web-based social bookmark manager
+swaml - Semantic Web Archive of Mailing Lists
+swap-cwm - RDF/XML and RDF/N3 semantic web data processor
+swish - semantic web toolkit - tools
+d2r - D2R Server is a tool for publishing relational databases on the Semantic Web.
+liberfurt-php - PHP5 / Zend based Semantic Web API for Social Semantic Software
+ontowiki-mysql - Semantic Data Wiki enabling the publication of RDF data
+ontowiki-virtuoso - Semantic Data Wiki enabling the publication of RDF data
+rdf.sh - multi-tool for doing Semantic Web jobs on the command line
+siren - The Semantic Information Retrieval Engine for LOD2
+spatial-semantic-browser - javascript-based browser for spatial semantic data
+stanbol - An open source modular software stack and reusable set of components for semantic content management.
+ros-indigo-rocon-semantic-version - Internal packaging of the 2.2.2 version of the python semantic version module.
+ros-indigo-srdfdom - Parser for Semantic Robot Description Format (SRDF).  ..
