@@ -289,3 +289,7 @@ spatial-semantic-browser - javascript-based browser for spatial semantic data
 stanbol - An open source modular software stack and reusable set of components for semantic content management.
 ros-indigo-rocon-semantic-version - Internal packaging of the 2.2.2 version of the python semantic version module.
 ros-indigo-srdfdom - Parser for Semantic Robot Description Format (SRDF).  ..
+
+=grass roots work starts from shared vocab/xml markup, then more constraints, so even though I've 
+mentioned looking at AI/dataming workflow..markup, there are others of interest; Since I'm also 
+looking at engineering/system/s I'll look at the UML related sysML en.wikipedia.org/wiki/Systems_Modeling_Languag
