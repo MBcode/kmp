@@ -293,3 +293,6 @@ ros-indigo-srdfdom - Parser for Semantic Robot Description Format (SRDF).  ..
 =grass roots work starts from shared vocab/xml markup, then more constraints, so even though I've 
 mentioned looking at AI/dataming workflow..markup, there are others of interest; Since I'm also 
 looking at engineering/system/s I'll look at the UML related sysML en.wikipedia.org/wiki/Systems_Modeling_Languag
+
+=Had other notes about pmml, pml http://xml.coverpages.org/ni2004-01-16-a.html (w/KM)& several more
+ that I should find&start playing w/just a bit.
