@@ -301,3 +301,6 @@ looking at engineering/system/s I'll look at the UML related sysML en.wikipedia.
 http://www.irisa.fr/LIS/softwares/squall SQUALL (Semantic Query and Update High-Level Language) is a controlled natural language (CNL) for querying and updating ;other KM re:wrk attempto.ifi.uzh.ch ..
  
 http://rdflib.github.io/sparqlwrapper/ via trivial-shell &/or clpython
+gnome: tracker-sparql (1)   - Use SparQL to query the Tracker databases. ;faceted qry of the filesystem
+
+http://www.european-lisp-symposium.org/ELS2014.pdf 
