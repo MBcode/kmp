@@ -304,3 +304,5 @@ http://rdflib.github.io/sparqlwrapper/ via trivial-shell &/or clpython
 gnome: tracker-sparql (1)   - Use SparQL to query the Tracker databases. ;faceted qry of the filesystem
 
 http://www.european-lisp-symposium.org/ELS2014.pdf 
+http://christophe.rhodes.io/notes/blog/posts/2014/european_lisp_symposium_2014/ 
+ 2new MGL varients, mention of julia &much more ;consider playing w/some kaggel data again
