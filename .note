@@ -308,3 +308,6 @@ http://christophe.rhodes.io/notes/blog/posts/2014/european_lisp_symposium_2014/
  2new MGL varients, mention of julia &much more ;consider playing w/some kaggel data again
 https://github.com/ghollisjr/cl-ana  has hdf-table,&much more for data-analysis
 https://github.com/agentultra/butler ipy, https://github.com/twosigma/beaker-notebook ?
+
+Pull together data provenance/stat/pmml/..descriptions into something quickly usable in km
+ &pull out old scalable ideas(bit.ly/TP8gfz) to try w/it.
