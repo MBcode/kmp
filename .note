@@ -314,3 +314,6 @@ Pull together data provenance/stat/pmml/..descriptions into something quickly us
 http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms 
 
 https://github.com/mmontone/cl4store
+
+http://arxiv.org/abs/1405.5905 Managing large-scale scientific hypotheses as uncertain data with support for predictive analytics 
+http://maybms.sourceforge.net/    ;try cl-bayes* &..
