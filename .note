@@ -313,9 +313,14 @@ Pull together data provenance/stat/pmml/..descriptions into something quickly us
  &pull out old scalable ideas(bit.ly/TP8gfz) to try w/it.
 http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms 
 
-https://github.com/mmontone/cl4store
+https://github.com/mmontone/cl4store & https://github.com/equill ox(-4store) etc
 
 http://arxiv.org/abs/1405.5905 Managing large-scale scientific hypotheses as uncertain data with support for predictive analytics 
 http://maybms.sourceforge.net/    ;try cl-bayes* &..
  ‏@lysander07  12m
 My new online #mooc course 'Knowledge Engineering with Semantic Technologies' starts today at #OpenHPI https://openhpi.de/courses/2d1ede48-4cc6-4a36-bcc4-6cb02e36b3ea … #semanticweb 
+
+http://f1000research.com/articles/3-101/v1 Computational science: shifting the focus from tools to models
+Facilitating Web Science Collaboration through Semantic Markup by @jahendler #opendata #schemaorg http://www.slideshare.net/jahendler/facilitating-web-science-collaboration-through-semantic-markup-35137375?ref=http://www.slideshare.net/nopiedra/newsfeed?auth=jv5FnIwt4yOljQfCROEJQm0atkEAwYr2e16RBLyPNoIDKqbtyFopxUuJnR0j%0Av00vp4FetGtDCYzacwIikLDiNAqVXKtPtG0jUtdWGV7F%2FpRhfuZ7%2BNtcDXOz%0A0m2ceX5IkuPakUmZHCI3h26K%2F3%2F1Ow%3D%3D%0A&ss=35137375&utm_source=slideshow&utm_medium=ssemail&utm_campaign=upload_digest … #linkeddata
+
+olap ext2datacube: http://fios.ontologycentral.com/ 
