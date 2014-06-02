@@ -326,3 +326,13 @@ Facilitating Web Science Collaboration through Semantic Markup by @jahendler #op
 olap ext2datacube: http://fios.ontologycentral.com/ 
 λ▶<564 m31local: /kmq/kmp> cp /Users/bobak/dwn/lang/lsp/ai/ut/mfkb/km/kmq/cl_kme/src/*.txt src
 (lkm2) (l5) (ti1) ..  ;get this&more easily asserting into km 
+
+#NLProc: Duke is a fast and flexible deduplication (or entity resolution, or record linkage) engine on top of Lucene http://goo.gl/4jO2Jf   ;maybe use via abcl, or sbcl w/trivial-shell
+ incl-s sparql: https://github.com/larsga/Duke/wiki/DataSources
+ once again, like some other semweb/nl ..(apache/etc)code, it doesn't quite compile easily
+  e.g. marmotta lmf ..
+ I would like more of these sys(in any lang)to be more unix tool like, so@least parts usable
+
+MLbase: scalable machine learning on Apache Spark 
+    http://ampcamp.berkeley.edu/wp-content/uploads/2013/07/amp_camp_8_30_13-1.pdf
+
