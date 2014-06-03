@@ -336,3 +336,7 @@ olap ext2datacube: http://fios.ontologycentral.com/
 MLbase: scalable machine learning on Apache Spark 
     http://ampcamp.berkeley.edu/wp-content/uploads/2013/07/amp_camp_8_30_13-1.pdf
 
+http://www.w3.org/2013/04/semweb-html5/spider/ chrome.google.com/webstore/detail/semantic-spider
+ https://github.com/shishimaru/triplestoreJS/tree/master/examples/demo/spider/chrome-ex
+ If your stored web contents have something relationship with each other, then they starts to be inter-linked automatically 
+_would like something similar on a(semantic)desktop level(html/file/mail/...)
