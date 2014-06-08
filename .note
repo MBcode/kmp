@@ -355,3 +355,19 @@ http://semanticweb.com/semantic-web-jobs-university-buffalo_b43113
 Have wanted more than markup in my CV, &want 1ground truth to generate the rest from, so might
  start w/ https://github.com/prat0318/json_resume &do something a little more json-ld &use which
  ever vocabs would be of use.  Also in my KE class review reminded KM can catch much of this&more.
+Might use http://rdfs.org/resume-rdf/ -> http://rdfs.org/resume-rdf/cv.rdfs#   .., 
+ want it to catch errors (incl time restrictions)that I/others might miss;via logical constraints
+ http://www.w3.org/wiki/ResumeRDFOntology -> 
+    http://web.archive.org/web/20110723035128/http://captsolo.net/semweb/resume/0.2/cv.rdf
+ Could go rdf-> the json above, which goes2may formats, but would not keep all the rdf info
+  so look to converting to rdfa.. w/in the final output.
+ Lets start by trying to load the .rdf* above, using the Lisp code in this dir.
+   Well or any tool that will load them, and output to something that is even easier to use.
+(ql 'wilbur)
+(with-open-file (stream #P"cv.rdf" :direction :input)
+  (setf wilbur:*db*
+    (wilbur:parse-db-from-stream stream "http://notional.no-ip.org/cv.rdf")))
+#<WILBUR::TEMPORARY-PARSER-DB size 419 {100F1B0603}>
+USER(3): (wilbur:query nil !rdfs:label nil) 
+USER(4): (length *)
+88  ;I will start by using this.
