@@ -351,3 +351,7 @@ http://www.slideshare.net/steffenstaab/programming-the-semantic-web-35204953 wou
 
 http://semanticweb.com/semantic-web-jobs-university-buffalo_b43113 
  if I was going to go after a science app, something like this might be nice /if i was a postdoc
+
+Have wanted more than markup in my CV, &want 1ground truth to generate the rest from, so might
+ start w/ https://github.com/prat0318/json_resume &do something a little more json-ld &use which
+ ever vocabs would be of use.  Also in my KE class review reminded KM can catch much of this&more.
