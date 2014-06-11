@@ -370,4 +370,6 @@ Might use http://rdfs.org/resume-rdf/ -> http://rdfs.org/resume-rdf/cv.rdfs#   .
 #<WILBUR::TEMPORARY-PARSER-DB size 419 {100F1B0603}>
 USER(3): (wilbur:query nil !rdfs:label nil) 
 USER(4): (length *)
-88  ;I will start by using this.
+88  ;I will start by using this.  ;descriptions seems a bit week,might add other re ones
+
+http://www.slideshare.net/junzhao/querygenerationforprovodata201406 sld6 taveran/wings ..
