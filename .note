@@ -401,3 +401,6 @@ http://www.meetup.com/SF-Types-Theorems-and-Programming-Languages/events/1856605
  Arfon Smith @arfon  ·  14h
 New blog post: JSON-LD for software discovery, reuse and credit http://www.arfon.org/json-ld-for-software-discovery-reuse-and-credit … #openscience 
   ==I want to go beyond discovery and allow for composition at some point
+ 
+have wanted to try http://franz.com/agraph/racer/racer_features.lhtml but can now try:
+~bobak/quicklisp/dists/quicklisp/software/racer-20140616-git https://github.com/ha-mo-we/Racer.git
