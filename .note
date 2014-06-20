@@ -244,6 +244,7 @@ http://www.cs.cmu.edu/~fgcozman/Research/InterchangeFormat/ http://www.pr-owl.or
 http://www.csee.umbc.edu/~ypeng/Publications/2005/BayesOWL-BookChapter.pdf
 http://nlp2rdf.org/ http://aksw.org/Projects/NIF.html v http://en.wikipedia.org/wiki/AIML
 en.wikipedia.org/wiki/Rule_Interchange_Format /v www.brcommunity.com/b597.php DecisionModelNotation
+ http://oppl2.sourceforge.net/ Ontology Pre-processing Language
 _get relationships so they can all more easily work together.
 
 Look for something that could pull some of the markup above w/suggested vocabs as needed,
@@ -402,6 +403,9 @@ http://www.meetup.com/SF-Types-Theorems-and-Programming-Languages/events/1856605
 New blog post: JSON-LD for software discovery, reuse and credit http://www.arfon.org/json-ld-for-software-discovery-reuse-and-credit … #openscience 
   ==I want to go beyond discovery and allow for composition at some point
   describe once, &goals, all mapping can be compiled, ..
+
+  http://robertdavidstevens.wordpress.com/2014/06/19/the-software-ontology-swo/
+   but could go beyond composing these kind of workflow elts ;more prov now
  
 have wanted to try http://franz.com/agraph/racer/racer_features.lhtml but can now try:
 ~bobak/quicklisp/dists/quicklisp/software/racer-20140616-git https://github.com/ha-mo-we/Racer.git
