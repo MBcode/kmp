@@ -424,3 +424,8 @@ http://blog.opencog.org/2013/03/24/why-hypergraphs/
 4NLP/etc.                  cl-earley-parser_0.9.2@    langutils@
 basic-english-grammar-1.0@ cl-inflector@        lassie@
 cl-ace@                    cl-nlp@              EPILOG@  
+
+http://www.w3.org/community/hydra/2014/06/20/hydra-welcomes-linked-data-fragments 
+Hydra is a lightweight vocabulary to create hypermedia-driven Web APIs 
+Linked Data Fragments, a uniform view on all possible interfaces to publish Linked Data on the Web
+triple pattern fragments, a type of Linked Data Fragment designed for low-cost server usage while enabling efficient client-side execution of common types of queries. 
