@@ -432,3 +432,5 @@ http://www.w3.org/community/hydra/2014/06/20/hydra-welcomes-linked-data-fragment
 Hydra is a lightweight vocabulary to create hypermedia-driven Web APIs 
 Linked Data Fragments, a uniform view on all possible interfaces to publish Linked Data on the Web
 triple pattern fragments, a type of Linked Data Fragment designed for low-cost server usage while enabling efficient client-side execution of common types of queries. 
+
+https://github.com/stain/owlapi-jsonld clj /owl2jsonld /clj-owlapi 
