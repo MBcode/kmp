@@ -406,6 +406,9 @@ New blog post: JSON-LD for software discovery, reuse and credit http://www.arfon
 
   http://robertdavidstevens.wordpress.com/2014/06/19/the-software-ontology-swo/
    but could go beyond composing these kind of workflow elts ;more prov now
+
+  not just code/but sci/sim models, really it give the ability to mv code2a more explicit state
+  http://news.rpi.edu/content/2014/06/19/nature-climate-change-commentary all more re-use/purpose
  
 have wanted to try http://franz.com/agraph/racer/racer_features.lhtml but can now try:
 ~bobak/quicklisp/dists/quicklisp/software/racer-20140616-git https://github.com/ha-mo-we/Racer.git
