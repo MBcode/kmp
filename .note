@@ -436,3 +436,4 @@ triple pattern fragments, a type of Linked Data Fragment designed for low-cost s
 https://github.com/stain/owlapi-jsonld clj /owl2jsonld /clj-owlapi 
 
 http://i.stanford.edu/panda/ prov  ;via onto / ~TMS ..  ;incl4large arrays
+http://thinklinks.wordpress.com/2014/06/21/trip-report-provenance-week-2014/ wf pl/os/db/.. 
