@@ -372,6 +372,7 @@ Might use http://rdfs.org/resume-rdf/ -> http://rdfs.org/resume-rdf/cv.rdfs#   .
 USER(3): (wilbur:query nil !rdfs:label nil) 
 USER(4): (length *)
 88  ;I will start by using this.  ;descriptions seems a bit week,might add other re ones
+http://arxiv.org/abs/1211.2854 Using ontology for resume annotation;www.hropenstandards.org
 
 http://www.slideshare.net/junzhao/querygenerationforprovodata201406 sld6 taveran/wings ..
 
