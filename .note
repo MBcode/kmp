@@ -447,3 +447,4 @@ would like like flat file ext mem file stores that are accessed lazily ;get bits
  manardb:Persistent, fast mmap'd database for Common Lisp using MOP; includes its own GC systems 
 https://github.com/mathematical-systems manardb naive-acache cl-tokyo-tokyo-tyrant cl-static-array
  future clml ...   /malecoli
+http://www.mkbergman.com/1769/50-ontology-mapping-and-alignment-tools/ 
