@@ -457,4 +457,5 @@ http://semweb.mmlab.be /ns/rml
 (open)refine was for metaweb, so freebase tie in;&goog using schema.org now too /goog-graph
 http://basekb.com/  ; http://www.bestonlinecourses.info/introducing-to-freebase-and-googles-knowledge-graph/
 https://github.com/josephmisiti/awesome-machine-learning 
-http://www.deepresearch.org/ 
+http://www.deepresearch.org/ data analysis lifecycle ;wider view than cl-ana
+LODRefine has RDF/DBpedia/crowdsourcing&NER&stats extensions  ;so some similarities
