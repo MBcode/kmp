@@ -483,3 +483,5 @@ work in ./src:  might create a .note there  /early start on:
 -rw-r--r--  1 bobak   651K Jul 23 11:46 aj.cl cl-json dump http://schema.rdfs.org/all.json
 -rw-r--r--  1 bobak   559K Jul 23 00:36 all.km sed of http://schema.rdfs.org/all.nt
 -rw-r--r--  1 bobak   436B Jul 23 00:35 nt2km.sed 
+
+http://www.slideshare.net/pacoid/oscon-2014-data-workflows-for-machine-learning 
