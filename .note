@@ -459,6 +459,7 @@ http://basekb.com/  ; http://www.bestonlinecourses.info/introducing-to-freebase-
 https://github.com/josephmisiti/awesome-machine-learning 
 http://www.deepresearch.org/ data analysis lifecycle ;wider view than cl-ana
 LODRefine has RDF/DBpedia/crowdsourcing&NER&stats extensions  ;so some similarities
+ look@ http://en.wikipedia.org/wiki/Wrapper_(data_mining)
 
 maybe http://umbel.org/ via lisp/?
 http://fgiasson.com/blog/index.php/2014/06/30/new-umbel-web-services/ 
