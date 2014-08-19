@@ -513,3 +513,8 @@ still want2look@ jpl.nasa.edu(ds1)deep-space1(remote agent)[rax]planner, written
 http://www.informatik.uni-trier.de/~ley/db/conf/aips/aips1994.html attened while@anl.gov
 -
 cbr:Metacat cl-protos icbr mcchef malecoli/mlcl-cbr
+-
+rerunning s4 == sbcl (load "ld4.cl") -get-> tax.txt to see the KM components-lib:
+ http://www.cs.utexas.edu/users/mfkb/RKF/tree/
+also look@pre-siri CogAssit that Learns&Oranizes components:  &relationships
+ https://pal.sri.com/Plone/framework/framework/Components
