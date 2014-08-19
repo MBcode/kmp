@@ -515,6 +515,9 @@ http://www.informatik.uni-trier.de/~ley/db/conf/aips/aips1994.html attened while
 cbr:Metacat cl-protos icbr mcchef malecoli/mlcl-cbr
 -
 rerunning s4 == sbcl (load "ld4.cl") -get-> tax.txt to see the KM components-lib:
+USER(1): (save-kb "tax.kb")
+tax.kb saved!
+T
  http://www.cs.utexas.edu/users/mfkb/RKF/tree/
 also look@pre-siri CogAssit that Learns&Oranizes components:  &relationships
  https://pal.sri.com/Plone/framework/framework/Components
