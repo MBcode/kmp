@@ -1,4 +1,4 @@
-
+;;viz of this at: http://www.cs.utexas.edu/users/mfkb/RKF/tree/
 ;;; Current state of the KB (8/18/2014 21:26.47, KM 2.5.33)
 
 (reset-kb)
