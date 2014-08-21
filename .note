@@ -436,6 +436,9 @@ cl-ace@                    cl-nlp@              EPILOG@
 
  might want2use parts of: cs.cmu.edu/project/scone, check on usage
 
+ look@ http://web.stanford.edu/~jurafsky/
+  also topice re2: http://hci.cs.wisc.edu/workshops/AAAI/SSS2015/
+
 http://www.w3.org/community/hydra/2014/06/20/hydra-welcomes-linked-data-fragments 
 Hydra is a lightweight vocabulary to create hypermedia-driven Web APIs 
 Linked Data Fragments, a uniform view on all possible interfaces to publish Linked Data on the Web
