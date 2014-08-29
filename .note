@@ -532,6 +532,10 @@ http://www.informatik.uni-trier.de/~ley/db/conf/aips/aips1994.html attened while
 
  quickly/have sitting around: prodigy/*/*planner aima/planning dplan2 pail/planning ...
 -
+http://arxiv.org/abs/1408.6520 'Knowledge Engineering for Planning-Based Hypothesis Generation'
+ PDDL planner ..
+ http://icaps14.icaps-conference.org/proceedings/keps/KEPS_proceedings.pdf
+-
 cbr:Metacat cl-protos icbr mcchef malecoli/mlcl-cbr
 -
 rerunning s4 == sbcl (load "ld4.cl") -get-> tax.txt to see the KM components-lib:
