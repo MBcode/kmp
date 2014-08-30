@@ -536,6 +536,10 @@ http://arxiv.org/abs/1408.6520 'Knowledge Engineering for Planning-Based Hypothe
  PDDL planner ..
  http://icaps14.icaps-conference.org/proceedings/keps/KEPS_proceedings.pdf
 -
+some graphplan incl: http://web.cs.wpi.edu/~nth/cs534/resources/SensoryGraphPlan/sgp/
+ http://www.cs.washington.edu/ai/sgp.html http://www.cs.cmu.edu/~avrim/pgp.html
+ http://en.wikipedia.org/wiki/Graphplan   http://www.cs.cmu.edu/~avrim/graphplan.html
+-
 cbr:Metacat cl-protos icbr mcchef malecoli/mlcl-cbr
 -
 rerunning s4 == sbcl (load "ld4.cl") -get-> tax.txt to see the KM components-lib:
