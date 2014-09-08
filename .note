@@ -538,6 +538,13 @@ http://arxiv.org/abs/1408.6520 'Knowledge Engineering for Planning-Based Hypothe
 -
 some graphplan incl: http://web.cs.wpi.edu/~nth/cs534/resources/SensoryGraphPlan/sgp/
  http://www.cs.washington.edu/ai/sgp.html http://www.cs.cmu.edu/~avrim/pgp.html
+     551    2170   19309 domains.lisp
+      91     274    2576 entry.lisp
+    1629    7652   65812 gp.lisp
+      66     247    2293 loader.lisp
+     425    1723   15189 logic.lisp
+    2056   10365   85057 sgp.lisp
+    4818   22431  190236 total loads, but err in domains/bt.lisp run
  http://en.wikipedia.org/wiki/Graphplan   http://www.cs.cmu.edu/~avrim/graphplan.html
 -
 cbr:Metacat cl-protos icbr mcchef malecoli/mlcl-cbr
