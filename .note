@@ -428,7 +428,8 @@ http://fgiasson.com/blog/index.php/2014/06/17/revision-of-serializing-rdf-data-a
 http://infolab.stanford.edu/gps/ https://github.com/kraison/vivace-graph-v3.git bit.ly/TP8gfz
 
    array-km/racer ~annotation of arrays(larger descriptive groups)                  ""
-    maybe via www.w3.org/TR/vocab-data-cube 
+    maybe via www.w3.org/TR/vocab-data-cube  
+ http://arxiv.org/abs/1409.3530 Concept-oriented model: inference in hierarchical multidimensional space
 
 http://blog.opencog.org/2013/03/24/why-hypergraphs/ 
 4NLP/etc.                  cl-earley-parser_0.9.2@    langutils@
