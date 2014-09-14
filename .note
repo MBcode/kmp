@@ -201,6 +201,7 @@ complete reasoning, aiming at overcoming the current limitations on large-scale 
 all@ http://notional.no-ip.org/srv.html  incl. http://webprotege.stanford.edu/#List:coll=Home;
 https://pal.sri.com/Plone/framework/Components/learning-applications/probabilistic-consistency-engine-jw 
 try then https://pal.sri.com/Plone/framework/framework/Components CALO/KM related
+   http://www.sri.com/newsroom/events/intelligent-assistants-conference-2014 http://www.ai.sri.com/project/CALO
 look@workflow work(data-driven); &: https://github.com/xively/libxively comm also slime swank(-crew)
 use lfarm which uses lparallel but want2go2 specific workers, not just a pool;cl-mpi,cl-pvm mq:w.cl
 also want web viz, play w/some js too: ps.cl but get back to the focus of importing for kr&r 
