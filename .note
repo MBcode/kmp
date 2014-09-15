@@ -37,6 +37,7 @@ https://github.com/dirtyvagabond/factql
 more easily get ustruct-txt into triples
  
 looked at clj-hdf5  /sci-db    /but R-sci-db would be better  so rcl/etc
+ https://github.com/HDFGroup/hdf5-cffi/ 
  
 try a mq lib or at least redis w pubsub
  
