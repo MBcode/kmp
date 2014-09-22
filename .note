@@ -416,6 +416,13 @@ New blog post: JSON-LD for software discovery, reuse and credit http://www.arfon
   http://robertdavidstevens.wordpress.com/2014/06/19/the-software-ontology-swo/
    but could go beyond composing these kind of workflow elts ;more prov now
 
+ wf prov can help parallelize too:
+ https://www.youtube.com/watch?v=g8b05aKa40M&feature=youtu.be 
+ http://www.cs.ucdavis.edu/research/tech-reports/2008/CSE-2008-15.pdf
+ http://www.researchgate.net/profile/Timothy_Mcphillips2/publication/220105016_Provenance_in_collection-oriented_scientific_workflows/links/09e4150c113e08f0c8000000
+ http://daniel-zinn.de/ICDE11-demo.pdf http://daks.ucdavis.edu/?page_id=320
+look@ https://github.com/naveensundarg/Common-Lisp-Actors.git &similar (distrib) incl CEP/rules lisa.sf
+
   not just code/but sci/sim models, really it give the ability to mv code2a more explicit state
   http://news.rpi.edu/content/2014/06/19/nature-climate-change-commentary all more re-use/purpose
  
