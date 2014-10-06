@@ -598,3 +598,5 @@ prolog/datalog re: http://minikanren.org/ -> http://common-lisp.net/projects/cl-
 
 http://common-lisp.net/project/erlisp/ http://lambda-the-ultimate.org/node/317
 https://github.com/flambard/CLERIC http://www.cliki.net/distributed 
+http://www.cliki.net/Concurrency http://www.cliki.net/cl-muproc 
+https://github.com/naveensundarg/Common-Lisp-Actors 
