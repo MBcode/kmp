@@ -588,6 +588,13 @@ Rainer Joswig ‏@RainerJoswig  4h
 Gábor Melis won the 'Higgs Boson Machine Learning Challenge' with #lisp / SBCL. 1785 teams. Congratulations!
 https://www.kaggle.com/c/higgs-boson/forums/t/10425/code-release/54518#post54518 … 
 uses MGL which was a major pkg I started with; http://cliki.net/MGL 
+    #<SYSTEM mgl / mgl-20131111-git / quicklisp 2014-12-17>
+    #<SYSTEM mgl-example / mgl-20131111-git / quicklisp 2014-12-17>
+    #<SYSTEM mgl-gnuplot / mgl-20131111-git / quicklisp 2014-12-17>
+    #<SYSTEM mgl-pax / mgl-pax-20141217-git / quicklisp 2014-12-17>
+    #<SYSTEM mgl-pax-test / mgl-pax-20141217-git / quicklisp 2014-12-17>
+    #<SYSTEM mgl-test / mgl-20131111-git / quicklisp 2014-12-17>
+    #<SYSTEM mgl-visuals / mgl-20131111-git / quicklisp 2014-12-17>
  http://quotenil.com/Migration-to-github.html but still having trouble to get running/again
 
 http://www.meetup.com/USF-Seminar-Series-in-Analytics/events/201889262/ ML in DBs; look at loom and bayesdb
