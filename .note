@@ -677,3 +677,5 @@ We are looking for are research programmers, programmers beyond those that would
 In my latest AI-Magazine: https://hci.cs.uwaterloo.ca/faculty/elaw/cs889/reading/IML/2013AIMagIML.pdf 
 
 try https://github.com/eslick/conceptminer.git 
+
+https://github.com/tinkerpop/gremlin/wiki/SPARQL-vs.-Gremlin ; saw some clj Titan/Gremlin libs; still like agraph ; postgress (interop/use)
