@@ -679,6 +679,8 @@ In my latest AI-Magazine: https://hci.cs.uwaterloo.ca/faculty/elaw/cs889/reading
 try https://github.com/eslick/conceptminer.git 
 
 https://github.com/tinkerpop/gremlin/wiki/SPARQL-vs.-Gremlin ; saw some clj Titan/Gremlin libs; still like agraph ; postgress (interop/use)
+    Marko A. Rodriguez ‏@twarko  Jan 16
+    TinkerPop is going Apache (Incubator). https://groups.google.com/d/msg/gremlin-users/7YtBDU2ettA/Ffq-oDSh8IMJ … #graphdb #nosql #bigdata 
 
 Yves Mulkers @YvesMulkers  ·  Jan 10 The Graph Database and the RDF Database http://ln.is/insideanalysis.com/2/FlwES … 
 
@@ -687,4 +689,3 @@ https://github.com/aaltodsg/instans streaming sparql
 http://common-lisp.net/project/cl-graph/ http://common-lisp.net/project/cl-graph/user-guide.html http://www.metabang.com/unclog/publisha/atinybit.html 
 
 got device/app to archive http://mike.bobak.googlepages.com/coursera &more, so can start reviewing related more easily again
- 
