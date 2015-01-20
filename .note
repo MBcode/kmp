@@ -689,3 +689,5 @@ https://github.com/aaltodsg/instans streaming sparql
 http://common-lisp.net/project/cl-graph/ http://common-lisp.net/project/cl-graph/user-guide.html http://www.metabang.com/unclog/publisha/atinybit.html 
 
 got device/app to archive http://mike.bobak.googlepages.com/coursera &more, so can start reviewing related more easily again
+
+ @HolgerKnublauch  ·  Introducing LDOM (Linked Data Object Model) as a proposed RDF Shapes language (and next generation of SPIN): http://spinrdf.org/ldomprimer.html  
