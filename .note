@@ -719,3 +719,8 @@ aside: Netcdf quick load file x;Poly scitech/langs/..;TMS caching;..;R caret
 https://www.eventbrite.com/e/machine-learning-in-san-francisco-tickets-15920334148
 terminal <-on- predictionIO <-on- ?? is what I wanted(2bld), suggest techniques/etc
  in general want smaller more mobile computation, w/distrib bubble up computation
+
+
+http://www.meetup.com/SF-Big-Analytics/events/220427049/ Efficient MiniBatch,allreduce; 
+http://bid2.berkeley.edu/bid-data-project/ Scala MPI; On CPUs or gpu w/same lib
+http://www.meetup.com/San-Francisco-High-Performance-Computing-Meetup/events/220169772/ mis sim
