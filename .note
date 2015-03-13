@@ -724,3 +724,6 @@ terminal <-on- predictionIO <-on- ?? is what I wanted(2bld), suggest techniques/
 http://www.meetup.com/SF-Big-Analytics/events/220427049/ Efficient MiniBatch,allreduce; 
 http://bid2.berkeley.edu/bid-data-project/ Scala MPI; On CPUs or gpu w/same lib
 http://www.meetup.com/San-Francisco-High-Performance-Computing-Meetup/events/220169772/ mis sim
+
+http://www.meetup.com/sf-text/events/220718220/ Ontologies,  room4improvement
+http://www.meetup.com/Data-Mining/events/220748448/ Spark DataFrames and ML Pipelines for Large-scale Data Science 
