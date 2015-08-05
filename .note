@@ -772,3 +772,5 @@ Greg Borenstein @atduskgreg  Jun 27 Surprised I don’t see more Deep Learning r
 mlcache, like the caching in dynamic-programming, but use ml models2guess, ..could be used for anytime answers ;work in w/provenanc
  
 Hacker News @HNTweets  Visual Dataflow Implemented in Lisp [pdf]: http://web.onetel.com/~hibou/fmj/interpreter.pdf … Comments: https://news.ycombinator.com/item?id=9996379 
+
+@planet_lisp Quicklisp news: August 2015 Quicklisp dist update now available http://blog.quicklisp.org/2015/08/august-2015-quicklisp-dist-update-now.html … ;adds: https://github.com/mmaul/clml/
