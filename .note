@@ -774,3 +774,5 @@ mlcache, like the caching in dynamic-programming, but use ml models2guess, ..cou
 Hacker News @HNTweets  Visual Dataflow Implemented in Lisp [pdf]: http://web.onetel.com/~hibou/fmj/interpreter.pdf … Comments: https://news.ycombinator.com/item?id=9996379 
 
 @planet_lisp Quicklisp news: August 2015 Quicklisp dist update now available http://blog.quicklisp.org/2015/08/august-2015-quicklisp-dist-update-now.html … ;adds: https://github.com/mmaul/clml/
+
+Would like to get https://github.com/bhyde/plot-window/blob/master/examples/d3js/d3js.lisp running before http://www.meetup.com/sfhtml5/events/219966838/ &other plotting/svg &cl-jupyter..
