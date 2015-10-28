@@ -128,6 +128,7 @@ http://www.cs.utexas.edu/~ml/publications/area/120/qualitative_modeling_and_diag
 /Users/bobak/dwn/ai/disc/mbr/edu/qrg /Users/bobak/Documents/www/www.cs.utexas.edu/users/qr preKMwork
 http://www.cs.utexas.edu/~ml/papers/qdocs-ijcai95sub.pdf       :..sfs algry qsim-install
 http://link.springer.com/chapter/10.1007%2F3-540-46135-3_48#page-1 ;cnstr, screamer/kr..
+  @HNTweets The Anatomy of a Puzzle: https://chriskohlhepp.wordpress.com/specification-driven-programming-in-common-lisp … Comments: https://news.ycombinator.com/item?id=10457465 …;incl screamer
 https://www.researchgate.net/publication/2812075_A_Qualitative_Model_of_the_Space_Shuttle_Reaction_Control_System  using qsim
 -still keeping parts of dbg traces around, to revisit/see use/etc.
 _for an html/doc ontology (where I can't find a proper format) I might have to use:
