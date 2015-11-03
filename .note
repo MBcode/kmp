@@ -763,7 +763,9 @@ http://www.slideshare.net/tdunning/strata-2014-anomaly-detection https://github.
 http://berlinbuzzwords.de/session/deep-learning-high-performance-time-series-databases https://github.com/tdunning/anomaly-detection http://datarika.com/blog/downloads/Time_Series_Databases.pdf
 
 http://imagej.nih.gov/ij/ http://imagej.net/ lots more (bio) image-processing links from my microscopy work, &now I see R-stat links like: https://cran.r-project.org/web/packages/RImageJROI/index.html 
- Albert Cardona @albertcardona @thefreemanlab @odersky We built Fiji this way! A mixture of graduate students and postdocs http://fiji.sc/Fiji ;is an image processing package. It can be described as a "batteries-included" distribution of ImageJ
+ Albert Cardona @albertcardona @thefreemanlab @odersky We built Fiji this way! A mixture of graduate students and postdocs http://fiji.sc/Fiji ;an image processing "batteries-included" distribution of ImageJ
+  http://rsbweb.nih.gov/ij/plugins/ http://fiji.sc/Category:Tutorials http://fiji.sc/Category:Plugins . http://fiji.sc/TrakEM2 . http://fiji.sc/Clojure_Scripting http://cmci.embl.de/documents/101105ij_r_jython
+  http://www.r-bloggers.com/image-data-from-imagej-to-r-and-vice-versa http://romainfrancois.blog.free.fr/index.php?post/2009/06/22/using-ImageJ-from-R%3A-the-RImageJ-package
 http://bio7.org/?p=894 https://cran.r-project.org/web/views/MedicalImaging.html (EBImage) http://www.bioconductor.org/packages/release/bioc/html/EBImage.html regsitration like ../RNiftyReg much more
 https://www.openmicroscopy.org/site
  @varsha_khodiyar .@BalintAntal gives a shoutout to the OMERO tool from the lab of @ScientificData Editorial Board member Jason Swedlow  #scidata15
