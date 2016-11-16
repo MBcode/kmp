@@ -1,0 +1,349 @@
+; Tue Nov 15 16:36:46 PST 2016
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Slot)
+		(create-accessor read-write))
+	(single-slot Spatial-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
+		(create-accessor read-write))
+	(single-slot EntityProperty
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Property)
+		(create-accessor read-write))
+	(single-slot Causal-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
+		(create-accessor read-write))
+	(single-slot Temporal-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
+		(create-accessor read-write))
+	(single-slot Agentive-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
+		(create-accessor read-write))
+	(single-slot agent
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Agentive-Relation)
+		(create-accessor read-write))
+	(single-slot Meronymic-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
+		(create-accessor read-write))
+	(single-slot Property-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Property)
+		(create-accessor read-write))
+	(single-slot Slot
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Property
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Slot)
+		(create-accessor read-write))
+	(single-slot Participant-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
+		(create-accessor read-write))
+	(single-slot EventProperty
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Property)
+		(create-accessor read-write)))
+
+(defclass KMcore "www.cs.utexas.edu/users/mfkb/RKF/tree\nconsider mixing in with/via a metaproject"
+	(is-a USER)
+	(role abstract)
+	(single-slot Slot
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Entity
+	(is-a KMcore)
+	(role concrete))
+
+(defclass Aggregate
+	(is-a Entity)
+	(role concrete))
+
+(defclass Community
+	(is-a Aggregate)
+	(role concrete))
+
+(defclass Ensemble
+	(is-a Aggregate)
+	(role concrete))
+
+(defclass Organization
+	(is-a Aggregate)
+	(role concrete))
+
+(defclass Department
+	(is-a Organization)
+	(role concrete))
+
+(defclass Group
+	(is-a Organization)
+	(role concrete))
+
+(defclass Family
+	(is-a Group)
+	(role concrete))
+
+(defclass Team
+	(is-a Group)
+	(role concrete))
+
+(defclass Workgroup
+	(is-a Team)
+	(role concrete))
+
+(defclass Committee
+	(is-a Workgroup)
+	(role concrete))
+
+(defclass Institution
+	(is-a Organization)
+	(role concrete))
+
+(defclass Company
+	(is-a Institution)
+	(role concrete))
+
+(defclass Corporation
+	(is-a Company)
+	(role concrete))
+
+(defclass Educational-Institution
+	(is-a Institution)
+	(role concrete))
+
+(defclass Property-Class-Order
+	(is-a Aggregate)
+	(role concrete))
+
+(defclass Scale
+	(is-a Aggregate)
+	(role concrete))
+
+(defclass View
+	(is-a Aggregate)
+	(role concrete))
+
+(defclass Intangible-Entity
+	(is-a Entity)
+	(role concrete))
+
+(defclass Conceptual-Entity
+	(is-a Intangible-Entity)
+	(role concrete))
+
+(defclass Language
+	(is-a Intangible-Entity)
+	(role concrete))
+
+(defclass Money
+	(is-a Intangible-Entity)
+	(role concrete))
+
+(defclass Sequence
+	(is-a Entity)
+	(role concrete))
+
+(defclass Information-Sequence
+	(is-a Sequence)
+	(role concrete))
+
+(defclass Spatial-Entity
+	(is-a Entity)
+	(role concrete))
+
+(defclass Place
+	(is-a Spatial-Entity)
+	(role concrete))
+
+(defclass Region
+	(is-a Place)
+	(role concrete))
+
+(defclass Territory
+	(is-a Region)
+	(role concrete))
+
+(defclass Administrative-District
+	(is-a Territory)
+	(role concrete))
+
+(defclass City
+	(is-a Administrative-District)
+	(role concrete))
+
+(defclass Country
+	(is-a Administrative-District)
+	(role concrete))
+
+(defclass County
+	(is-a Administrative-District)
+	(role concrete))
+
+(defclass Political-State
+	(is-a Administrative-District)
+	(role concrete))
+
+(defclass Province
+	(is-a Administrative-District)
+	(role concrete))
+
+(defclass Tangible-Entity
+	(is-a Spatial-Entity)
+	(role concrete))
+
+(defclass Energy
+	(is-a Tangible-Entity)
+	(role concrete))
+
+(defclass Physical-Object
+	(is-a Tangible-Entity)
+	(role concrete))
+
+(defclass Inanimate-Object
+	(is-a Physical-Object)
+	(role concrete))
+
+(defclass Artifact
+	(is-a Inanimate-Object)
+	(role concrete))
+
+(defclass Architecture
+	(is-a Artifact)
+	(role concrete))
+
+(defclass Device
+	(is-a Artifact)
+	(role concrete))
+
+(defclass Furnishing
+	(is-a Artifact)
+	(role concrete))
+
+(defclass Physical-Document
+	(is-a Artifact)
+	(role concrete))
+
+(defclass Piece-of-Substance
+	(is-a Inanimate-Object)
+	(role concrete))
+
+(defclass Living-Entity
+	(is-a Physical-Object)
+	(role concrete))
+
+(defclass Cell
+	(is-a Living-Entity)
+	(role concrete))
+
+(defclass Organism
+	(is-a Living-Entity)
+	(role concrete))
+
+(defclass Animal
+	(is-a Organism)
+	(role concrete))
+
+(defclass Plant
+	(is-a Organism)
+	(role concrete))
+
+(defclass Substance
+	(is-a Tangible-Entity)
+	(role concrete))
+
+(defclass Fluid-Substance
+	(is-a Substance)
+	(role concrete))
+
+(defclass Metal
+	(is-a Substance)
+	(role concrete))
+
+(defclass Solid-Substance
+	(is-a Substance)
+	(role concrete))
+
+(defclass Event
+	(is-a KMcore)
+	(role concrete))
+
+(defclass Action
+	(is-a Event)
+	(role concrete))
+
+(defclass Activity
+	(is-a Event)
+	(role concrete))
+
+(defclass Goal
+	(is-a Event)
+	(role concrete))
+
+(defclass State
+	(is-a Event)
+	(role concrete))
+
+(defclass Temporal-Entity
+	(is-a KMcore)
+	(role concrete))
+
+(defclass Time-Instant
+	(is-a Temporal-Entity)
+	(role concrete))
+
+(defclass Time-Interval
+	(is-a Temporal-Entity)
+	(role concrete))
+
+(defclass Role
+	(is-a KMcore)
+	(role concrete))
+
+(defclass Agent-Role
+	(is-a Role)
+	(role concrete))
+
+(defclass Participant
+	(is-a Agent-Role)
+	(role concrete))
+
+(defclass Creator
+	(is-a Participant)
+	(role concrete))
+
+(defclass Resource
+	(is-a Role)
+	(role concrete))
+
+(defclass Situation
+	(is-a KMcore)
+	(role concrete))
