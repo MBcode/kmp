@@ -1,0 +1,16 @@
+I found these up a level from cl-kme(&others), around some sparql queries
+also dusting off other re: lisp code, and think this is just part of what
+I never commited before;(finding too many missing pieces in these public dirs)
+&hope to, even if this is not clean, keep from having too many missing pieces.
+
+unzip s.zip here:
+ 
+-rw-rw-r-- 1 bobak 6.8K Dec  3 23:56 owl2km.lisp
+-rw-rw-r-- 1 bobak 6.3K Dec  3 23:56 ps.cl
+-rw-rw-r-- 1 bobak 1.2K Dec  3 23:56 README.md
+drwxrwxr-x 4 bobak 4.0K Dec  3 23:59 s/
+-rw-rw-r-- 1 bobak 3.6K Dec  3 23:56 sparql.lisp
+drwxrwxr-x 2 bobak 4.0K Dec  3 23:56 src/
+-rw-rw-r-- 1 bobak  519 Dec  3 23:56 sysML.cl
+-rw-rw-r-- 1 bobak  52K Dec  3 23:56 s.zip
+ 
