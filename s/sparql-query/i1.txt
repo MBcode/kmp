@@ -1,0 +1,9 @@
+SELECT *
+  WHERE
+    {
+      ?e <http://dbpedia.org/ontology/series>         <http://dbpedia.org/resource/The_Sopranos>  .
+      ?e <http://dbpedia.org/ontology/releaseDate>    ?date                                       .
+      ?e <http://dbpedia.org/ontology/episodeNumber>  ?number                                     .
+      ?e <http://dbpedia.org/ontology/seasonNumber>   ?season
+    }
+  ORDER BY DESC(?date) 

@@ -1,0 +1,8 @@
+SELECT *
+  WHERE
+    { 
+      ?company  a                                              <http://dbpedia.org/ontology/Organisation>  .
+      ?company  <http://dbpedia.org/ontology/foundationPlace>  <http://dbpedia.org/resource/California>    .
+      ?product  <http://dbpedia.org/ontology/developer>        ?company                                    .
+      ?product  a                                              <http://dbpedia.org/ontology/Software>
+    } 
