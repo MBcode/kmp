@@ -37,7 +37,27 @@
 ;}
 (defun tc (fl &optional (tc *tc*)) 
   ;loop for fs in fl collect  
-  (str-cat tc
+  (when (full fl)
+    (str-cat tc
            (mapcar #'(lambda (f) (format nil *ffs* f)) fl)
            "}")
-  )
+  ))
+(defun tcs (fl &optional (tc *tc*) (sf "t2.tmp")) 
+  (save-lines (append (list tc) 
+           (mapcar #'(lambda (f) (format nil *ffs* f)) fl)
+              '(" } LIMIT 10"))  sf))
+(defun rtcs (fl)
+  (tcs fl)
+  (tf "i2.tmp"))
+(defun mk-tmp-fn (l) (str-cat "tmp/" (underscore_ (implode-l l)) ".tmp"))
+(defun tsfl (fl)
+  (let ((tf (mk-tmp-fn fl)))
+    (unless (file-exists-p tf) (tcs fl *tc* tf))
+    (tf tf)))
+(defun subseq-mx (s mx) (subseq s 0 (min mx (len s))))
+(defun subseq-mx2 (s) (subseq-mx s 2))
+(defun f2sq (fn) ;try: "c2o6.csv"
+  "take 1st words of each line &qry for that org"
+  ;let ((loqw (mapcar #'explode= (list-lines fn))))
+  (let ((loqw (mapcar #'subseq-mx2 (mapcar #'explode= (list-lines fn)))))
+    (mapcar #'tsfl loqw)))
