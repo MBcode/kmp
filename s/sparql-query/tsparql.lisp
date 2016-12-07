@@ -61,6 +61,14 @@
   (with-open-file (strm fn :direction :output :if-exists :supersede)
       (print l strm)))
 
+(defun read-fn (fn)
+  (with-open-file (strm fn :direction :input)
+     ;(read strm) (READ-SEQUENCE strm)
+     (read-from-string 
+      (rm-strs '("NS-0:" "|xsi|:") ;from xml pkg used
+       (read-file-to-string fn))
+      )))
+
 (defun tsfl (fl)
   "use|mk cached qry and run"
   (let ((tf (mk-tmp-fn fl)))
@@ -85,8 +93,15 @@
   (let* ((tf (mk-tmp-fn fl))
          (tfl (str-cat tf ".l")))
     (unless (file-exists-p tf) (tcs fl *tc* tf))
-    (if (file-exists-p tfl) (list-lines tfl) ;finish
+    (if (file-exists-p tfl) (read-fn tfl) ;(list-lines tfl) ;finish
       (print2tmpl tfl (tf tf))) ;run-qry&cache
     ));next print.. (append qry-l resp-l)
 (defun t2b (&optional (fl '("parc")))
    (qfl fl))
+;defun f2sq (fn) ;try: "c2o6.csv"
+(defun fn2qfl (fn &optional (fflf #'subseq-mx2)) ;filter filter-list fnc
+  "take 1st words of each line &qry for that org"
+  ;let ((loqw (mapcar #'explode= (list-lines fn))))
+  ;let ((loqw (mapcar #'subseq-mx2 (mapcar #'explode= (list-lines fn)))))
+  (let ((loqw (mapcar fflf (mapcar #'explode= (list-lines fn)))))
+    (mapcar #'qfl loqw)))
