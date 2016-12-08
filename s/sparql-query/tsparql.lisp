@@ -19,6 +19,8 @@
      (tsh ;tshell-command 
        str)))
 
+(defun fwdslash2hyphen (s) (substitute #\- #\/ s))
+
 (defvar *i2* "sparql-query -np http://dbpedia.org/sparql < i2.txt")
 (defvar *sq-f* "sparql-query -np http://dbpedia.org/sparql <")
 
@@ -57,7 +59,10 @@
   (tcs fl)
   (tf "i2.tmp"))
 
-(defun mk-tmp-fn (l) (str-cat "tmp/" (underscore_ (implode-l l)) ".tmp"))
+(defun mk-tmp-fn (l) (str-cat "tmp/" 
+                          (fwdslash2hyphen
+                              (underscore_ (implode-l l)))
+                              ".tmp"))
 
 (defun print2tmpl (fn l)
   (with-open-file (strm fn :direction :output :if-exists :supersede)
@@ -141,13 +146,4 @@
 ;or could get a list of 3 filterwords, and trim it if  qfl, having a new qfl2 w/the smarts
  ;well not trim but only use some of the words to start then incr if necc, so fflf done there:qfl2
 
-;oops don't want to do at the whole csv list stage, want to do at the per call stage BAD
-;defun fn2qfls (fn &optional (fflfs '(#'subseq-mx2 #'subseq-mx3))) ;filter filter-list functions
-;(defun fn2qfls (fn &optional (fflfs '(#'subseq-mx2 #'subseq-mx3))) ;filter filter-list functions
-;  "taks 1st 2 then if need be 3 words of each line from fn, to filter an org qry"
-;  (let ((ret (fn2qfl fn (first-lv fflfs))))
-;    ;if (and (len-eq ret *limit*) (len-gt fflfs 1)) ;at limit, or some frac of:
-;    (if (and (len-gt ret (* 0.75 *limit*)) (len-gt fflfs 1))
-;      (fn2qfl fn (second-lv fflfs))
-;      ret)))
-;(trace first-lv second-lv fn2qfl)
+;for much of this a person in the loop would probably save the most time
