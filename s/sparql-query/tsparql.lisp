@@ -20,6 +20,7 @@
        str)))
 
 (defun fwdslash2hyphen (s) (substitute #\- #\/ s))
+(defun explode-space (s) (explode-str s :sep #\Space))
 
 (defvar *i2* "sparql-query -np http://dbpedia.org/sparql < i2.txt")
 (defvar *sq-f* "sparql-query -np http://dbpedia.org/sparql <")
@@ -147,3 +148,19 @@
  ;well not trim but only use some of the words to start then incr if necc, so fflf done there:qfl2
 
 ;for much of this a person in the loop would probably save the most time
+ ;review-via/have something that will show full-initial org line, the qry &numbered so it could be selected ;w/last choice to run a diff qry
+ ;look@ km QA tools ..
+;look into the sparql results to tables
+ 
+;csv
+(ql 'cl-csv)
+(defun read-csv-sp-str (sl)
+  (explode-space (first-lv (first (cl-csv:read-csv sl)))))
+(defun read-csv-fn (fn)
+  (map-lines fn #'read-csv-sp-str))
+ ;then can: (mapcar #'len *) & (histo *)
+;stat
+(ql 'lhstats)
+(defun histo (l &optional (nbins 10))
+  (statistics::histovalues l :nbins nbins))
+
