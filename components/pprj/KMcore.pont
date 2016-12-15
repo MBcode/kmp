@@ -1,4 +1,4 @@
-; Tue Nov 15 16:36:46 PST 2016
+; Wed Dec 14 20:15:48 CST 2016
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -27,10 +27,10 @@
 ;+		(cardinality 0 1)
 ;+		(subslot-of Relation)
 		(create-accessor read-write))
-	(single-slot Temporal-Relation
+	(single-slot hasPicture
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) (range (StillImage)) (inverse (isPictureOf)) (cardinality (N-to-N))")
 		(type STRING)
 ;+		(cardinality 0 1)
-;+		(subslot-of Relation)
 		(create-accessor read-write))
 	(single-slot Agentive-Relation
 		(type STRING)
@@ -42,17 +42,18 @@
 ;+		(cardinality 0 1)
 ;+		(subslot-of Agentive-Relation)
 		(create-accessor read-write))
-	(single-slot Meronymic-Relation
-		(type STRING)
-;+		(cardinality 0 1)
-;+		(subslot-of Relation)
-		(create-accessor read-write))
 	(single-slot Property-Relation
 		(type STRING)
 ;+		(cardinality 0 1)
 ;+		(subslot-of Property)
 		(create-accessor read-write))
-	(single-slot Slot
+	(single-slot hasContactInformation
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person Role Organization Event EmploymentRecord Calendar-Entry)) (range (ContactDataStructur\ne)) (inverse (isContactInformationFor)) (cardinality (N-to-N))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasSkill
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) (range (String)) (cardinality (N-to-1))")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -61,15 +62,59 @@
 ;+		(cardinality 0 1)
 ;+		(subslot-of Slot)
 		(create-accessor read-write))
-	(single-slot Participant-Relation
-		(type STRING)
-;+		(cardinality 0 1)
-;+		(subslot-of Relation)
-		(create-accessor read-write))
 	(single-slot EventProperty
 		(type STRING)
 ;+		(cardinality 0 1)
 ;+		(subslot-of Property)
+		(create-accessor read-write))
+	(single-slot hasSchedule
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isScheduleOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasOccupation
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) (range (Job-Role)) (cardinality (N-to-N))(inverse (isOccupationOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Temporal-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
+		(create-accessor read-write))
+	(single-slot hasOccupationalRank
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isOccupationalRankOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasEmploymentStatus
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-1))(inverse (isEmploymentStatusOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Meronymic-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
+		(create-accessor read-write))
+	(single-slot Slot
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasOnlinePresenceStatus
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isOnlinePresenceStatusOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot isMentionedIn
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) (range (InformationObject)) (inverse (hasMentionOf)) (cardinality (N-to-N)) (fluent-status \n(*Inertial-Fluent))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Participant-Relation
+		(type STRING)
+;+		(cardinality 0 1)
+;+		(subslot-of Relation)
 		(create-accessor read-write)))
 
 (defclass KMcore "www.cs.utexas.edu/users/mfkb/RKF/tree\nconsider mixing in with/via a metaproject"
@@ -272,6 +317,55 @@
 	(is-a Organism)
 	(role concrete))
 
+(defclass Person
+	(is-a Animal)
+	(role concrete)
+	(single-slot hasSchedule
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isScheduleOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasContactInformation
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person Role Organization Event EmploymentRecord Calendar-Entry)) (range (ContactDataStructur\ne)) (inverse (isContactInformationFor)) (cardinality (N-to-N))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasEmploymentStatus
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-1))(inverse (isEmploymentStatusOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasSkill
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) (range (String)) (cardinality (N-to-1))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasOnlinePresenceStatus
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isOnlinePresenceStatusOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasPicture
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) (range (StillImage)) (inverse (isPictureOf)) (cardinality (N-to-N))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot isMentionedIn
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) (range (InformationObject)) (inverse (hasMentionOf)) (cardinality (N-to-N)) (fluent-status \n(*Inertial-Fluent))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasOccupation
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) (range (Job-Role)) (cardinality (N-to-N))(inverse (isOccupationOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasOccupationalRank
+;+		(comment "(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isOccupationalRankOf))")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
 (defclass Plant
 	(is-a Organism)
 	(role concrete))
@@ -338,6 +432,34 @@
 
 (defclass Creator
 	(is-a Participant)
+	(role concrete))
+
+(defclass Job-Role
+	(is-a Participant)
+	(role concrete))
+
+(defclass OccupationalRank
+	(is-a Job-Role)
+	(role concrete))
+
+(defclass Provider
+	(is-a Job-Role)
+	(role concrete))
+
+(defclass Purchaser
+	(is-a Job-Role)
+	(role concrete))
+
+(defclass Employee
+	(is-a Job-Role)
+	(role concrete))
+
+(defclass Controller
+	(is-a Participant)
+	(role concrete))
+
+(defclass ManagementOrganizationRole
+	(is-a Job-Role Controller)
 	(role concrete))
 
 (defclass Resource
