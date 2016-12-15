@@ -164,3 +164,7 @@
 (defun histo (l &optional (nbins 10))
   (statistics::histovalues l :nbins nbins))
 
+;look at distribution of #of words, and make better use of it; 
+;also when other info, like type of industry available, try to use in the query(find relation/ship for that)
+; or course if there is already a url for it, just use that as a global id to map to
+
