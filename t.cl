@@ -2,9 +2,7 @@
 (lkmq)  
 (use-package :km) 
 (get-all-symbols :km) ;should not need these
-(defun km-add-to-kb-object-list (cn) (km::km-add-to-kb-object-list cn))
-(defun reset-kb () (km::reset-kb))
-(defun put-list (s l) (km::put-list s l))
+(import '(km::km-add-to-kb-object-list km::reset-kb km::put-list)) ;get more
 (defun tax (&optional (c))  ;though I already had this
   (if c (km::taxonomy c)
     (km::taxonomy)))
