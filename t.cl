@@ -1,8 +1,9 @@
 ;a quick test file
-(lkmq)  
+(lkmq) ;(lkm3) 
 (use-package :km) 
 (get-all-symbols :km) ;should not need these
-(import '(km::km-add-to-kb-object-list km::reset-kb km::put-list)) ;get more
+(import '(km::km-add-to-kb-object-list km::reset-kb km::put-list
+          km::taxonomy km::fastload-kb km::fastsave-kb)) ;get more
 (defun tax (&optional (c))  ;though I already had this
   (if c (km::taxonomy c)
     (km::taxonomy)))
@@ -42,3 +43,6 @@
 ;?  *s
 ;(KM::|t|)
 ;USER(7): 
+
+;vivacegraph-v3 agraph cl-neo4j
+ ;rDB2graph, /r2rml ;then qry..
