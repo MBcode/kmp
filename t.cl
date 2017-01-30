@@ -46,3 +46,7 @@
 
 ;vivacegraph-v3 agraph cl-neo4j
  ;rDB2graph, /r2rml ;then qry..
+;want foriegn-keys 2be link/relations automatically
+ ;and to add to this incrementally afterwards
+ ;starting from a mysqldump &quickly loading
+;might use clsql-orm or similar as well
