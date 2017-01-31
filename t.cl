@@ -50,3 +50,5 @@
  ;and to add to this incrementally afterwards
  ;starting from a mysqldump &quickly loading
 ;might use clsql-orm or similar as well
+;For Protege in java https://github.com/phillord/protege-nrepl /clojure-tab but not really going
+; had heard of abcl as a tab, but he never packaged it up; some lisp but not better than my clp code yet
