@@ -1,4 +1,4 @@
-; Wed Dec 14 20:15:49 CST 2016
+; Wed Feb 15 18:40:18 PST 2017
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,9 +20,9 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[KMcore_ProjectKB_Class10010]
-		[KMcore_ProjectKB_Class10011]
-		[KMcore_ProjectKB_Class10012]))
+		[KMcore_ProjectKB_Class10]
+		[KMcore_ProjectKB_Class11]
+		[KMcore_ProjectKB_Class12]))
 
 ([CLSES_TAB] of  Widget
 
@@ -66,9 +66,6 @@
 	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_067891_Class3] of  Map
-)
-
 ([KB_260296_Class0] of  String
 
 	(name "factory_class_name")
@@ -77,9 +74,9 @@
 ([KB_260296_Class1] of  Map
 
 	(entries
-		[KMcore_ProjectKB_Class10013]
-		[KMcore_ProjectKB_Class10014]
-		[KMcore_ProjectKB_Class10015]))
+		[KMcore_ProjectKB_Class13]
+		[KMcore_ProjectKB_Class14]
+		[KMcore_ProjectKB_Class15]))
 
 ([KB_260296_Class10] of  Property_List
 )
@@ -714,65 +711,34 @@
 	(property_list [KB_260296_Class100])
 	(widget_class_name "edu.stanford.smi.protegex.psm.PSMTab"))
 
-([KMcore_ProjectKB_Class10004] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [KMcore_ProjectKB_Class10005])
-	(widget_class_name "de.dfki.mycbr.modelprovider.protege.retrieval.MyCbr_Retrieval_Tab"))
-
-([KMcore_ProjectKB_Class10005] of  Property_List
+([KB_961233_Class3] of  Map
 )
 
-([KMcore_ProjectKB_Class10006] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [KMcore_ProjectKB_Class10007])
-	(widget_class_name "de.dfki.mycbr.modelprovider.protege.explanation.MyCbr_Explanation_Tab"))
-
-([KMcore_ProjectKB_Class10007] of  Property_List
-)
-
-([KMcore_ProjectKB_Class10008] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [KMcore_ProjectKB_Class10009])
-	(widget_class_name "de.dfki.mycbr.modelprovider.protege.similaritymodeling.MyCbr_Similarities_Tab"))
-
-([KMcore_ProjectKB_Class10009] of  Property_List
-)
-
-([KMcore_ProjectKB_Class10010] of  String
+([KMcore_ProjectKB_Class10] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([KMcore_ProjectKB_Class10011] of  String
+([KMcore_ProjectKB_Class11] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([KMcore_ProjectKB_Class10012] of  String
+([KMcore_ProjectKB_Class12] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([KMcore_ProjectKB_Class10013] of  Map_Entry
+([KMcore_ProjectKB_Class13] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([KMcore_ProjectKB_Class10014] of  Map_Entry
+([KMcore_ProjectKB_Class14] of  Map_Entry
 
 	(key "add_name_on_instance_form")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([KMcore_ProjectKB_Class10015] of  Map_Entry
-
-	(key "change_tracking_active")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
@@ -780,6 +746,40 @@
 ([KMcore_ProjectKB_Class147] of  String
 
 	(name "SearchTab_Query"))
+
+([KMcore_ProjectKB_Class15] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([KMcore_ProjectKB_Class4] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KMcore_ProjectKB_Class5])
+	(widget_class_name "de.dfki.mycbr.modelprovider.protege.retrieval.MyCbr_Retrieval_Tab"))
+
+([KMcore_ProjectKB_Class5] of  Property_List
+)
+
+([KMcore_ProjectKB_Class6] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KMcore_ProjectKB_Class7])
+	(widget_class_name "de.dfki.mycbr.modelprovider.protege.explanation.MyCbr_Explanation_Tab"))
+
+([KMcore_ProjectKB_Class7] of  Property_List
+)
+
+([KMcore_ProjectKB_Class8] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KMcore_ProjectKB_Class9])
+	(widget_class_name "de.dfki.mycbr.modelprovider.protege.similaritymodeling.MyCbr_Similarities_Tab"))
+
+([KMcore_ProjectKB_Class9] of  Property_List
+)
 
 ([LAYOUT_PROPERTIES] of  Property_List
 

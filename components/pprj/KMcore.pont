@@ -1,4 +1,4 @@
-; Wed Dec 14 20:15:48 CST 2016
+; Wed Feb 15 18:40:18 PST 2017
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -394,8 +394,28 @@
 	(is-a Event)
 	(role concrete))
 
+(defclass Communicate
+	(is-a Action)
+	(role concrete))
+
+(defclass Create
+	(is-a Action)
+	(role concrete))
+
+(defclass Express
+	(is-a Action)
+	(role concrete))
+
 (defclass Activity
 	(is-a Event)
+	(role concrete))
+
+(defclass Development
+	(is-a Activity)
+	(role concrete))
+
+(defclass Interaction
+	(is-a Activity)
 	(role concrete))
 
 (defclass Goal
