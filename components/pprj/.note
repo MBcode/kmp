@@ -1,0 +1,5 @@
+Might dump to plm format, then run powerloom from
+with (start-ontosaurus) and then going to the page
+http://localhost:9090/ploom/ontosaurus/
+
+Could also try to get the frame based webprotege up again.
