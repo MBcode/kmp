@@ -22,3 +22,5 @@ https://github.com/turbolent/sicl.git
 github.com/aaltodsg/instans rete based continuous SPARQL qry&update ~(CEP)
  one of the ways to get en.wikipedia.org/wiki/Complex_event_processing ability
   not only to clean/synch/..generally make higher level descriptions for making decisions
+
+also look at: lsp/code/project/src/daimrod/dbpedia-sparql https://github.com/daimrod/dbpedia-sparql.git
