@@ -4,3 +4,6 @@ Download and use in a few of the KM projects.
 Also, have start of a Protege pprj, that can be extended programatically.
 I have utils.clp loadp &km-taxonomy to go from pprj -> km but also have
  cl-kb and w/a KM taxonomy loaded should be able to create the pprj files.
+
+Look@also using: 
+https://dkm-static.fbk.eu/resources/ontologies/BPMN/BPMN_2.0_ontology.owl
