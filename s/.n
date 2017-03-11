@@ -24,3 +24,5 @@ github.com/aaltodsg/instans rete based continuous SPARQL qry&update ~(CEP)
   not only to clean/synch/..generally make higher level descriptions for making decisions
 
 also look at: lsp/code/project/src/daimrod/dbpedia-sparql https://github.com/daimrod/dbpedia-sparql.git
+look at wilbur twinql sicl   &4store stuff ;cl-ntriples cl-rdfxml
+vs rml, could get sql-dump2csv2pins have pins2km if needed
