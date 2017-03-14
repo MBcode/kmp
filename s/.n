@@ -26,3 +26,8 @@ github.com/aaltodsg/instans rete based continuous SPARQL qry&update ~(CEP)
 also look at: lsp/code/project/src/daimrod/dbpedia-sparql https://github.com/daimrod/dbpedia-sparql.git
 look at wilbur twinql sicl   &4store stuff ;cl-ntriples cl-rdfxml
 vs rml, could get sql-dump2csv2pins have pins2km if needed
+  need pont2km could use clips utils km-taxonomy w/work
+
+racer uses wilbur
+
+my old talk bit.ly/TP8gfz about using KM w/hadoop or similar
