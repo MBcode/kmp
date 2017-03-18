@@ -62,7 +62,7 @@
     (when pkyval (setf (first ls) pkyval))) ;reset
   ;-need to (mapcar #"id2clsins-ref ls) ;&append before the print
   (let* ((new (rm-nil (mapcar #'id2clsins_ref ls)))
-         (ls2 (when (fulll new) (append ls new))))
+         (ls2 (if (fulll new) (append ls new) ls)))
     (if os ;(write (mc2sn ls) :stream os) ;out file strm 
            (print_preserve ls2 os)
            (print ls2)))))
