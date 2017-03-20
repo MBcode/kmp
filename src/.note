@@ -2,3 +2,6 @@ work in ./src:  might create a .note there  /early start on this for schema.org/
 -rw-r--r--  1 bobak   651K Jul 23 11:46 aj.cl cl-json dump http://schema.rdfs.org/all.json
 -rw-r--r--  1 bobak   559K Jul 23 00:36 all.km sed of http://schema.rdfs.org/all.nt
 -rw-r--r--  1 bobak   436B Jul 23 00:35 nt2km.sed  
+pins.cl takes protege pins file and can rename ins w/classname_Ins_primary-key then can make forein key refs.
+added class refs to a version to a test.pont, but warns abt instance refs to ins not loaded, faking those is worse 
+can still fix, but there are other posabilities as I move more towards the power of lisp(incl clips->lisa.sf.net)..
