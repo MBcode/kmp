@@ -19,21 +19,31 @@
 ;could create both for pins&km below &/or also be able to convert pins->km
 (defun bracket2star (s)
   "[insname]->*kmInsName" ;assume on symbols right now
+ (if (not (symbolp s)) s 
   (let ((st (symbol-name s)))
     (when (prefixp "[" st) 
       (let ((nst (str-cat "*" (butlast- (subseq st 1)))))
         (if (stringp nst) ;(setf (symbol-name s) nst)
           (intern nst)
           s
-          )))))
+          ))))))
+(defun pins2sval (ls)
+  "pIns's slot-val alist"
+  (subseq ls 3))
+(defun psv2ksv (al)
+  "pins->km for (sn val)"
+  (let ((sn (first al))
+        (val (second al))) ;.  
+    (list sn (bracket2star val))))
 ;also change 1st 3 in instance clp->km
 ;([insname] of class ..) -> (*insname has (instance-of (class)) ..)
 (defun pins2km (ls) ;on /ins basis 1st
   (when (len-gt ls 4)
     (let ((insname (first ls))
           (cls (third ls))
-          (rl (subseq ls 3))) ;skip 'ins of class' part, to process (sn val) list 
-      (list (bracket2star insname) '|has| `(instance-of (,cls)) (mapcar #'(lambda (s v) (list s (braket2star v))) rl)))))
+          (rl (pins2sval ls))) ;skip 'ins of class' part, to process (sn val) list 
+      (list (bracket2star insname) '|has| `(instance-of (,cls)) (mapcar ;#'(lambda (s v) (list s (bracket2star v))) 
+                                                                  #'psv2ksv rl)))))
   ;test&improve soon
 
 
@@ -85,7 +95,7 @@
     (when pkyval (setf (first ls) pkyval))) ;reset
   ;-need to (mapcar #"id2clsins-ref ls) ;&append before the print
   (let* ((new (rm-nil (mapcar #'id2clsins_ref ls)))
-         (ls2 (if (fulll new) (append ls new) ls)))
+         (ls2 (when (fulll new) (append ls new))))
     (if os ;(write (mc2sn ls) :stream os) ;out file strm 
            (print_preserve ls2 os)
            (print ls2)))))
