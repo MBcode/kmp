@@ -11,10 +11,31 @@
 ;|[<clsname>_Instance_<int>]| |of| |<clsname>|
 
 (defun mc2sn (l) 
-  "map 2 symbol-name"
+  "map 2 symbol-name" ;not used
   (cond ((symbolp l) (symbol-name l)) 
         ((fulll l) (mapcar #'mc2sn l)) 
         (t l))) ;then 'write' it
+
+;could create both for pins&km below &/or also be able to convert pins->km
+(defun bracket2star (s)
+  "[insname]->*kmInsName" ;assume on symbols right now
+  (let ((st (symbol-name s)))
+    (when (prefixp "[" st) 
+      (let ((nst (str-cat "*" (butlast- (subseq st 1)))))
+        (if (stringp nst) ;(setf (symbol-name s) nst)
+          (intern nst)
+          s
+          )))))
+;also change 1st 3 in instance clp->km
+;([insname] of class ..) -> (*insname has (instance-of (class)) ..)
+(defun pins2km (ls) ;on /ins basis 1st
+  (when (len-gt ls 4)
+    (let ((insname (first ls))
+          (cls (third ls))
+          (rl (subseq ls 3))) ;skip 'ins of class' part, to process (sn val) list 
+      (list (bracket2star insname) '|has| `(instance-of (,cls)) (mapcar #'(lambda (s v) (list s (braket2star v))) rl)))))
+  ;test&improve soon
+
 
 ;In case primary key doesn't follow one standard
 (load "cls2pkslt.l" :print t) ;has *cls2pkslt* & *ctlist*
@@ -28,11 +49,12 @@
     ))
   
 (defun pins-pkval (ls)
+  "if (primary_key pk) in ins, rename it as [Class_pk]"
   (let* (;(cls (symbol-name (third ls)))
          (cls (third ls))
         ;(pkslt (sym-cat cls "." cls "ID"))
          (pkslt (cls2pkslt cls))
-         (rl (subseq ls 3))
+         (rl (subseq ls 3)) ;skip 'ins of class' part, to process (sn val) list
          (sv (second-lv (find pkslt rl :key #'first)))) ;#
     (when sv (sym-cat "[" cls "_Ins_" sv "]"))))
 ;at some point want other keys to ref the class type but
@@ -41,9 +63,10 @@
 ;-
 (defun clsins-ref (cls n &optional (strm t)) (format strm "(~a [~a_Ins~d])" cls cls n))
 (defun clsins_ref (cls n) (list cls (sym-cat "[" cls "_Ins_" n "]")))
+(defun clsins_ref-km (cls n) (list cls (sym-cat "*" cls "_Ins_" n)))
 ;defun id2clsins-ref (l2 &optional (strm t)) ;works w/either version of clsins*ref: 
 (defun id2clsins_ref (l2)  ;ins of c=should=c.sn 
-  ;assume sn is cls.sn
+  "if (..ID #) create insref: (.._ [])  else nil" ;assume sn is cls.sn
  (when (consp l2)
   (let* ((fsn (to-str (first l2)))
          ;(sn (second-lv (explode- fsn #\.)))
@@ -58,7 +81,7 @@
 (defun pins-w-pkId (ls &optional (os nil))
   "rename ins w/primary key id" ;might need2keys,;todo/?
  (when ls
-  (let ((pkyval (when (full ls) (pins-pkval ls))))
+  (let ((pkyval (when (full ls) (pins-pkval ls)))) ;or use fulll ?
     (when pkyval (setf (first ls) pkyval))) ;reset
   ;-need to (mapcar #"id2clsins-ref ls) ;&append before the print
   (let* ((new (rm-nil (mapcar #'id2clsins_ref ls)))
