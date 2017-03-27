@@ -21,7 +21,8 @@
   "[insname]->*kmInsName" ;assume on symbols right now
  (if (not (symbolp s)) s 
   (let ((st (symbol-name s)))
-    (when (prefixp "[" st) 
+    ;when (prefixp "[" st) 
+    (if (not (prefixp "[" st)) s  ;non insname sym pass through
       (let ((nst (str-cat "*" (butlast- (subseq st 1)))))
         (if (stringp nst) ;(setf (symbol-name s) nst)
           (intern nst)
@@ -34,16 +35,17 @@
   "pins->km for (sn val)"
   (let ((sn (first al))
         (val (second al))) ;.  
-    (list sn (bracket2star val))))
+    (list sn (list ; (val) 
+               (bracket2star val)))))
 ;also change 1st 3 in instance clp->km
 ;([insname] of class ..) -> (*insname has (instance-of (class)) ..)
 (defun pins2km (ls) ;on /ins basis 1st
+  "1pins->1km ins"
   (when (len-gt ls 4)
     (let ((insname (first ls))
           (cls (third ls))
           (rl (pins2sval ls))) ;skip 'ins of class' part, to process (sn val) list 
-      (list (bracket2star insname) '|has| `(instance-of (,cls)) (mapcar ;#'(lambda (s v) (list s (bracket2star v))) 
-                                                                  #'psv2ksv rl)))))
+      (append (list (bracket2star insname) '|has| `(instance-of (,cls))) (mapcar #'psv2ksv rl)))))
   ;test&improve soon
 
 
@@ -100,7 +102,30 @@
            (print_preserve ls2 os)
            (print ls2)))))
 
-(defun pinsf-w-pkId (pf &optional (of nil))
+(defun pins2km-o (ls &optional (os nil))
+  "sexpr -pins2km-> os file"
+  (let ((ls2 (pins2km ls)))
+    (if os ;(write (mc2sn ls) :stream os) ;out file strm 
+           (print_preserve ls2 os)
+           (print ls2))))
+
+(defun read-sexprs+transform (in fnc &optional (of nil))
+  "in file transformed w/fnc to 'of' file"
+  (with-open-file (strm in :direction :input)
+    (if of (with-open-file (ostrm of :direction :output :if-exists :supersede)
+             (while (funcall fnc (read_preserve strm) ostrm)))
+      (while (funcall fnc (read_preserve strm))))))
+
+(defun pinsf-w-pkId (in &optional (of nil))
+  "pins in file to 'of' transformed output file"
+    (read-sexprs+transform in #'pins-w-pkid of))
+
+(defun pins2km-io (in &optional (of nil))
+  "pins in file to 'of' output KM file"
+    (read-sexprs+transform in #'pins2km-o of))
+
+;Generalizing other fncs above but in a more compact way
+(defun pinsf-w-pkId- (pf &optional (of nil))
   "rename ins[name] in pins file w/primary key id"
   (with-open-file (strm pf :direction :input)
     (if of (with-open-file (ostrm of :direction :output :if-exists :supersede)
@@ -108,9 +133,15 @@
       (while (pins-w-pkid (read_preserve strm))))))
 
 (defun pins-p2pl (fb)
-  "for each class/table name"
+  "for each class/table name, transform2 pk name/pnt-ing"
   (pinsf-w-pkId (str-cat "p/" fb ".pins") 
                 (str-cat "pl/" fb ".pins")))
 
+(defun pins-pl2km (fb)  ;after pl/ full off pins files, can transform to pk/*.km files
+  "for each class-file pins->km"
+  (pins2km-io (str-cat "pl/" fb ".pins") 
+              (str-cat "pk/" fb ".km")))
+
+;-transform all class pins files to PrimaryKey nameing&add(new)slots to point to these names
 (defun p2pln (&optional (n 0))
   (mapcar #'pins-p2pl (subseq *ctlist* n)))
