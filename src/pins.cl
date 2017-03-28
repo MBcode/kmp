@@ -52,6 +52,23 @@
 ;In case primary key doesn't follow one standard
 (load "cls2pkslt.l" :print t) ;has *cls2pkslt* & *ctlist*
 ;or: (defvar *cls2pkslt*  nil) (defvar *ctlist*)
+;try: (mapcar #'(lambda (pr) (format t "~%~a -> ~a" (cdr pr) (car pr))) *cls2pkslt* ) to view it as a pk as fk -> table diagram
+; but since I use it as the 1st occurance of the ID, &this has multiple, I'd have to limit diag; so collect cdr|uniq,then map rassoc
+; I should probably just do that once, and have a 2nd alst for that one rev lookup, that is easier to debug
+;Would also be nice to have lsp code to automate even the defvar creation if the ID naming was completely consistent, but not always
+;-
+;Could write a fnc to rev a alst, and only take the 1st occurance of the val as a key 
+(defun rev-alst (al)
+  "reverse an assoc list"
+  (let ((vakl nil)) ;value as key list ;only use 1st occurance, so keep a stack that can be checked
+   (rm-nils
+    (mapcar #'(lambda (pr) (let ((k2v (car pr)) 
+                                 (v2k (cdr pr)))
+                             (when (not (member v2k vakl)) (cons v2k k2v)))) al))))
+(defun mk-pk2cls ()
+  (rev-alst *cls2pkslt*))
+(defvar *pk2cls* (mk-pk2cls))
+;-
 (defun cls2pkslt (cls)
   "classname 2 primary key slot name"
   (let ((pkslt (sym-cat cls "." cls "ID"))
@@ -85,7 +102,8 @@
          (c+sn (explode- fsn #\.))
          (c (first-lv c+sn));make it not add if new cr is same as original cls
          (sn (second-lv c+sn))
-         (cr (when sn (car-lv (rassoc (intern sn) *cls2pkslt*)))) ;..ID -> cls to ref2
+         (cr (when sn ;(car-lv (rassoc (intern sn) *cls2pkslt*)) ;..ID -> cls to ref2
+                       (assoc_v (intern sn) *pk2cls*)))  ;But will this be mixed-case check-here/debug
          (n (first-lv (cdr l2)))) 
     (when (and cr (not (eq cr (intern c)))) (clsins_ref cr n)))))
 ;-
@@ -125,7 +143,7 @@
     (read-sexprs+transform in #'pins2km-o of))
 
 ;Generalizing other fncs above but in a more compact way
-(defun pinsf-w-pkId- (pf &optional (of nil))
+(defun pinsf-w-pkId- (pf &optional (of nil)) ;really check that I shouldn't still be using this
   "rename ins[name] in pins file w/primary key id"
   (with-open-file (strm pf :direction :input)
     (if of (with-open-file (ostrm of :direction :output :if-exists :supersede)
