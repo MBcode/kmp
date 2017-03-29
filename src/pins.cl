@@ -48,7 +48,7 @@
       (append (list (bracket2star insname) '|has| `(instance-of (,cls))) (mapcar #'psv2ksv rl)))))
   ;test&improve soon
 
-
+;=Consider reading the sql schema files (use a quicklisp, lib), &pulling out as much key info as possible. If re pk >1 plc, cnct.
 ;In case primary key doesn't follow one standard
 (load "cls2pkslt.l" :print t) ;has *cls2pkslt* & *ctlist*
 ;or: (defvar *cls2pkslt*  nil) (defvar *ctlist*)
