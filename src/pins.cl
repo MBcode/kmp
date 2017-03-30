@@ -49,6 +49,9 @@
   ;test&improve soon
 
 ;=Consider reading the sql schema files (use a quicklisp, lib), &pulling out as much key info as possible. If re pk >1 plc, cnct.
+;(ql 'crane) or (ql 'clsql-orm) or (ql 'pgloader) .. https://github.com/fukamachi/mito.git  
+; ;doesn't get over loss of foreign-keys nor maybe sometimes defining more primary keys than necessary; but maybe ways around this
+;  incl looking@the data, to see what is really minimaly needed to ID a row in table, then make that the instance name in a ORMapping
 ;In case primary key doesn't follow one standard
 (load "cls2pkslt.l" :print t) ;has *cls2pkslt* & *ctlist*
 ;or: (defvar *cls2pkslt*  nil) (defvar *ctlist*)
