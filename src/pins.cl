@@ -52,7 +52,7 @@
 ;(ql 'crane) or (ql 'clsql-orm) or (ql 'pgloader) .. https://github.com/fukamachi/mito.git  
 ; ;doesn't get over loss of foreign-keys nor maybe sometimes defining more primary keys than necessary; but maybe ways around this
 ;  incl looking@the data, to see what is really minimaly needed to ID a row in table, then make that the instance name in a ORMapping
-;=google: infer foreign-key from primary-keys; has a few things to look at.
+;=google: infer foreign-key from primary-keys; has a few things to look at. ;maana.io has some longer range abilities I've thought of.
 ;In case primary key doesn't follow one standard
 (load "cls2pkslt.l" :print t) ;has *cls2pkslt* & *ctlist*
 ;or: (defvar *cls2pkslt*  nil) (defvar *ctlist*)
