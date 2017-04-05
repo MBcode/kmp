@@ -70,8 +70,18 @@
 ;(defvar *ctlist* (mapcar #'first *cls2pkslt*)) ;for now
  ;still seeing what are probably composite(primary)keys, which I guess I like more than the generated ID#s
    ;anyway this is causing hand editing of this file, so not fully automated from csv /yet ;still probably better2use csv
+ ;Try to decide what to do w/multi PKs
 (defvar *csv* (read-csv "fktcpktc.csv"))
 (defvar *ctlist* (mapcar #'first *csv*)) ;for now
+(defvar *pkc* (mapcar #'third *csv*)) ;cls of FK name can be diff from PK cls
+(defvar *pk2* (mapcar #'(lambda (l) (sym-cat (third l) "." (fourth l))) (rest *csv*)))
+(defvar *pku* (remove-duplicates *pk2* :test #'eq))
+(defvar *fk2* (mapcar #'(lambda (l) (sym-cat (first l) "." (second l))) (rest *csv*)))
+(defvar *fku* (remove-duplicates *fk2* :test #'eq))
+(defun pk-p (k) "primary-key" (member k *pku*))
+(defun fk-p (k) "foreign-key" (member k *fku*))
+(defvar *fk2pk* (mapcar #'cons *fk2* *pk2*))
+(defvar *fk2pkc* (mapcar #'list *fk2* *pk2* *pkc*))
 ;or: (defvar *cls2pkslt*  nil) (defvar *ctlist*)
 ;try: (mapcar #'(lambda (pr) (format t "~%~a -> ~a" (cdr pr) (car pr))) *cls2pkslt* ) to view it as a pk as fk -> table diagram
 ; but since I use it as the 1st occurance of the ID, &this has multiple, I'd have to limit diag; so collect cdr|uniq,then map rassoc
@@ -114,21 +124,29 @@
 ;-
 (defun clsins-ref (cls n &optional (strm t)) (format strm "(~a [~a_Ins~d])" cls cls n))
 (defun clsins_ref (cls n) (list cls (sym-cat "[" cls "_Ins_" n "]")))
+(defun clsins_ref_ (cls n) (list (sym-cat cls "_") (sym-cat "[" cls "_Ins_" n "]"))) ;pont should have ins refs: cls_
 (defun clsins_ref-km (cls n) (list cls (sym-cat "*" cls "_Ins_" n)))
 ;defun id2clsins-ref (l2 &optional (strm t)) ;works w/either version of clsins*ref: 
 (defun id2clsins_ref (l2)  ;ins of c=should=c.sn 
   "if (..ID #) create insref: (.._ [])  else nil" ;assume sn is cls.sn
- (when (consp l2)
-  (let* ((fsn (to-str (first l2)))
+  ;if fk-p sn  (sltname val) where sltname=cls.sn, -add-> (cls_ cls_Ins_val) ;clsins_ref
+ (when (consp l2) (let ((sltname (first l2))) (when (fk-p sltname) ;later assoc w/known pk, for now..;well diff cls so..
+  (let* ((fsn (to-str sltname ;(first l2)
+                      ))
+         (pkc (last_lv (assoc sltname *fk2pkc*))) ;cls of FK name can be diff from PK cls
          ;(sn (second-lv (explode- fsn #\.)))
          (c+sn (explode- fsn #\.))
          (c (first-lv c+sn));make it not add if new cr is same as original cls
          (sn (second-lv c+sn))
          (cr (when sn ;(car-lv (rassoc (intern sn) *cls2pkslt*)) ;..ID -> cls to ref2
                        (assoc_v (intern sn) *pk2cls*)))  ;But will this be mixed-case check-here/debug
-         (n (first-lv (cdr l2)))) 
-    (when (and cr (not (eq cr (intern c)))) (clsins_ref cr n)))))
-;-
+         ;=this is where can use FK info=
+         (n (first-lv (cdr l2))))  ;val
+    (when (and cr (not (eq cr (intern c)))) ;(clsins_ref cr n)
+     ;(clsins_ref (intern pkc) n)
+      (clsins_ref_ pkc n)
+      )))))) ;should be using this
+;-consider falling back2old pins.cl behavior if the csv file doesn't hold enough info
 
 (defun pins-w-pkId (ls &optional (os nil))
   "rename ins w/primary key id" ;might need2keys,;todo/?
