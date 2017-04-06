@@ -65,14 +65,16 @@
 ;In case primary key doesn't follow one standard
 ;(load "cls2pkslt.l" :print t) ;has *cls2pkslt* & *ctlist*
 ;want to get rid of this, and instead load a file w/fk_table,fk_column,pk_table,pk_column and create the cached data-structs,but
-(load "cls2pkslt.cl" :print t) ;for now ;has *cls2pkslt* but not *ctlist*
+(load "cls2pkslt.cl" :print t) ;for now ;has *cls2pkslt* but not *ctlist* ;could be skipped as make calcs from csv file below
 ;could skip load&reconstruct from *csv* below, but might shelve this for now, as have2go for much shorter/lesser wins right now
 ;(defvar *ctlist* (mapcar #'first *cls2pkslt*)) ;for now
  ;still seeing what are probably composite(primary)keys, which I guess I like more than the generated ID#s
    ;anyway this is causing hand editing of this file, so not fully automated from csv /yet ;still probably better2use csv
  ;Try to decide what to do w/multi PKs
-(defvar *csv* (read-csv "fktcpktc.csv"))
-(defvar *ctlist* (mapcar #'first *csv*)) ;for now
+;(defvar *csv* (read-csv "fktcpktc.csv"))
+(defvar *csv* (rest (read-csv "fktcpktc.csv"))) ;get rid of header
+;(defvar *ctlist* (remove-duplicates (mapcar #'first *csv*) :test #'equalp)) ;for now
+(load "ctlist.l") ;just to be able to hand edit for now
 (defvar *pkc* (mapcar #'third *csv*)) ;cls of FK name can be diff from PK cls
 (defvar *pk2* (mapcar #'(lambda (l) (sym-cat (third l) "." (fourth l))) (rest *csv*)))
 (defvar *pku* (remove-duplicates *pk2* :test #'eq))
@@ -122,9 +124,12 @@
  ;can do w/a method if all the ins have consistent naming
   ;this is for all *ID s that have just 1 ins w/that #
 ;-
+(defun underscore- (s) (if (stringp s) (safe-trim (underscore s)) s))
+;actually might need a safe string like this ;hoped this val would just be a number
+;-
 (defun clsins-ref (cls n &optional (strm t)) (format strm "(~a [~a_Ins~d])" cls cls n))
 (defun clsins_ref (cls n) (list cls (sym-cat "[" cls "_Ins_" n "]")))
-(defun clsins_ref_ (cls n) (list (sym-cat cls "_") (sym-cat "[" cls "_Ins_" n "]"))) ;pont should have ins refs: cls_
+(defun clsins_ref_ (cls n) (list (sym-cat cls "_") (sym-cat "[" cls "_Ins_" (underscore- n) "]"))) ;pont should have ins refs: cls_
 (defun clsins_ref-km (cls n) (list cls (sym-cat "*" cls "_Ins_" n)))
 ;defun id2clsins-ref (l2 &optional (strm t)) ;works w/either version of clsins*ref: 
 (defun id2clsins_ref (l2)  ;ins of c=should=c.sn 
@@ -203,3 +208,10 @@
 ;-transform all class pins files to PrimaryKey nameing&add(new)slots to point to these names
 (defun p2pln (&optional (n 0))
   (mapcar #'pins-p2pl (subseq *ctlist* n)))
+
+(defun pl2pkn (&optional (n 0))
+  (mapcar #'pins-pl2km (subseq *ctlist* n)))
+
+(defun pins2+km (&optional (n 0))
+  (p2pln n)
+  (pl2pkn n))
