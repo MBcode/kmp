@@ -49,9 +49,15 @@
            "}")
   ))
 (defvar *limit* 20) ;(defvar *qry-cap* (list (format nil " } LIMIT ~a" *limit*)))
+(defun save-lines- (l filename)
+   (when (fulll l)
+       (with-open-file (stream filename :direction :output :if-exists :supersede)
+             (mapcar #'(lambda (x) (write-line x stream)) l))))
+
 (defun tcs (fl &optional (tc *tc*) (sf "t2.tmp")) 
   "create qry, &cache"
-  (save-lines (append (list tc) 
+  ;save-lines (append (list tc) 
+  (save-lines- (append (list tc) 
            (mapcar #'(lambda (f) (format nil *ffs* f)) fl)
               '(" } LIMIT 20"))  sf))
               ;   *qry-cap*
