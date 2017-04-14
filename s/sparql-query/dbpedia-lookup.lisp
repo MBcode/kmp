@@ -75,3 +75,5 @@ is replaced with replacement."
 (defun lookup-all (l)
   (with-open-file (os "lookup.tmp" :direction :output)
     (mapcar #'(lambda (x) (dbpedia-lookup x os)) l)))
+;my/mb add
+(defun dbl (s) (dbpedia-lookup (clean4echo s)))

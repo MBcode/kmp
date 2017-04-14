@@ -31,3 +31,7 @@ vs rml, could get sql-dump2csv2pins have pins2km if needed
 racer uses wilbur
 
 my old talk bit.ly/TP8gfz about using KM w/hadoop or similar
+assume aggregation of numbers/etc can be described explicitly and run off that description
+would like a self/auto note taking that produce triples
+SELECT DISTINCT * WHERE {?company a dbpedia-owl:Company}
+http://www.cray.com/blog/dont-use-hammer-screw-nail-alternatives-regex-sparql/ contains instead of regex
