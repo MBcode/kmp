@@ -27,7 +27,7 @@ is replaced with replacement."
 
 (defun cadr-lv (l) (first-lv (rest-lv l)))
 
-(defun dbpedia-lookup (search-string &optional (os t))
+(defun dbpedia-lookup (search-string &optional (os t) (extra nil))
   (let* ((s-str (replace-all search-string " " "+"))
          (s-uri 
           (concatenate
@@ -61,7 +61,10 @@ is replaced with replacement."
            ;(description (string-trim '(#\Space #\NewLine #\Tab) (cadr (nth-lv 3 r))))
             (description (str_trim (cadr-lv (nth-lv 3 r))))
             )
-        (format os "~%~a, ~a, ~a, ~a" search-string uri label description)
+        (if extra
+        ;(format os "~%~a, ~a, ~a, ~a, ~a" search-string uri label description extra)
+         (format os "~%~a, ~a, ~a, ~a, ~a" extra uri search-string label description )
+         (format os "~%~a, ~a, ~a, ~a" search-string uri label description))
       (push
        (make-dbpedia-data
         :uri uri
