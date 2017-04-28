@@ -36,3 +36,4 @@ would like a self/auto note taking that produce triples
 SELECT DISTINCT * WHERE {?company a dbpedia-owl:Company}
 http://www.cray.com/blog/dont-use-hammer-screw-nail-alternatives-regex-sparql/ contains instead of regex
 assert/cache quried urIs +try something like github.com/VisualDataWeb/RelFinder
+To kick off diff sparql queries depending on available/missing info, use lisa.sf.net
