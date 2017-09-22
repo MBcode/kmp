@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.owl-ontologies.com/Ontology1506049008.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://www.owl-ontologies.com/Ontology1506049008.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="View">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >View</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Aggregate"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Country">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Administrative-District"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Country</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Territory">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Region"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Territory</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Event">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="KMcore"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Event</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Place">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Place</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Spatial-Entity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Scale">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Aggregate"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Scale</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Creator">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creator</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Participant"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Role">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KMcore"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Role</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Language">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Language</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Intangible-Entity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Community">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Aggregate"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Community</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="County">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Administrative-District"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >County</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Corporation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Corporation</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Company"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Information-Sequence">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Information-Sequence</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Sequence"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cell">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Living-Entity"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cell</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Intangible-Entity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Intangible-Entity</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Entity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Institution">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Organization"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Institution</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Committee">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Committee</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Workgroup"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Political-State">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Political-State</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Administrative-District"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Device">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Artifact"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Device</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Metal">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Metal</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Substance"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Temporal-Entity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KMcore"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Temporal-Entity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Organization">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Organization</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Aggregate"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Company">
+    <rdfs:subClassOf rdf:resource="#Institution"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Company</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Group">
+    <rdfs:subClassOf rdf:resource="#Organization"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Group</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Solid-Substance">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Substance"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Solid-Substance</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Situation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Situation</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KMcore"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Entity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KMcore"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Entity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Department">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Department</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Administrative-District">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Administrative-District</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Territory"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Workgroup">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Team"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workgroup</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Fluid-Substance">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fluid-Substance</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Substance"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Educational-Institution">
+    <rdfs:subClassOf rdf:resource="#Institution"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Educational-Institution</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Goal">
+    <rdfs:subClassOf rdf:resource="#Event"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Goal</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Animal">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Animal</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Organism"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Employee">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Employee</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Job-Role"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Job-Role">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Job-Role</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Participant"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#KMcore">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KMcore</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >www.cs.utexas.edu/users/mfkb/RKF/tree
+consider mixing in with/via a metaproject</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Organism">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Organism</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Living-Entity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Aggregate">
+    <rdfs:subClassOf rdf:resource="#Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Aggregate</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="City">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >City</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Administrative-District"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Purchaser">
+    <rdfs:subClassOf rdf:resource="#Job-Role"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Purchaser</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Energy">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Energy</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Tangible-Entity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Family">
+    <rdfs:subClassOf rdf:resource="#Group"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Family</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Agent-Role">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Agent-Role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Role"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Artifact">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Artifact</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Inanimate-Object"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Province">
+    <rdfs:subClassOf rdf:resource="#Administrative-District"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Province</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Inanimate-Object">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inanimate-Object</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Physical-Object"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Ensemble">
+    <rdfs:subClassOf rdf:resource="#Aggregate"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ensemble</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Spatial-Entity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Spatial-Entity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Entity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Person">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Animal"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Architecture">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Architecture</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Physical-Document">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical-Document</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Create">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Create</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Action"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Money">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Money</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Intangible-Entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Tangible-Entity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tangible-Entity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Spatial-Entity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Furnishing">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Furnishing</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Conceptual-Entity">
+    <rdfs:subClassOf rdf:resource="#Intangible-Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Conceptual-Entity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="State">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >State</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Controller">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Participant"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Controller</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Action">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Action</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Development">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Development</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Activity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Physical-Object">
+    <rdfs:subClassOf rdf:resource="#Tangible-Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical-Object</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="OccupationalRank">
+    <rdfs:subClassOf rdf:resource="#Job-Role"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OccupationalRank</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Substance">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Substance</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Tangible-Entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Team">
+    <rdfs:subClassOf rdf:resource="#Group"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Team</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Time-Interval">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Time-Interval</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Temporal-Entity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Express">
+    <rdfs:subClassOf rdf:resource="#Action"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Express</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Property-Class-Order">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Property-Class-Order</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Aggregate"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Plant">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Plant</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Organism"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Communicate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Communicate</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Action"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Region">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Region</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Place"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Provider">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Provider</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Job-Role"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Interaction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Activity"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Interaction</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Piece-of-Substance">
+    <rdfs:subClassOf rdf:resource="#Inanimate-Object"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Piece-of-Substance</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Time-Instant">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Time-Instant</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Temporal-Entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Living-Entity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Living-Entity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Physical-Object"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ManagementOrganizationRole">
+    <rdfs:subClassOf rdf:resource="#Controller"/>
+    <rdfs:subClassOf rdf:resource="#Job-Role"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ManagementOrganizationRole</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Sequence">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sequence</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Activity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Activity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Participant">
+    <rdfs:subClassOf rdf:resource="#Agent-Role"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Participant</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Resource">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Resource</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Role"/>
+  </owl:Class>
+  <owl:FunctionalProperty rdf:ID="EntityProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:ID="Property"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EntityProperty</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasSchedule">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isScheduleOf))</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasSchedule</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasOccupationalRank">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasOccupationalRank</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isOccupationalRankOf))</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:ID="Agentive-Relation"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >agent</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasOccupation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person)) (range (Job-Role)) (cardinality (N-to-N))(inverse (isOccupationOf))</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasOccupation</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="Participant-Relation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Participant-Relation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:ID="Relation"/>
+    </rdfs:subPropertyOf>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="Spatial-Relation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Spatial-Relation</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#Relation"/>
+    </rdfs:subPropertyOf>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasOnlinePresenceStatus">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasOnlinePresenceStatus</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-N))(inverse (isOnlinePresenceStatusOf))</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasPicture">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasPicture</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person)) (range (StillImage)) (inverse (isPictureOf)) (cardinality (N-to-N))</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#Relation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Relation</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:ID="Slot"/>
+    </rdfs:subPropertyOf>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isMentionedIn">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person)) (range (InformationObject)) (inverse (hasMentionOf)) (cardinality (N-to-N)) (fluent-status 
+(*Inertial-Fluent))</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isMentionedIn</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#Slot">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#KMcore"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Slot</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasContactInformation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person Role Organization Event EmploymentRecord Calendar-Entry)) (range (ContactDataStructur
+e)) (inverse (isContactInformationFor)) (cardinality (N-to-N))</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasContactInformation</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasSkill">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person)) (range (String)) (cardinality (N-to-1))</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasSkill</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="Temporal-Relation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="#Relation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Temporal-Relation</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasEmploymentStatus">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(instance-of (Interface-Slot)) (domain (Person)) #|(range (Thing))|# (cardinality (N-to-1))(inverse (isEmploymentStatusOf))</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasEmploymentStatus</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#Property">
+    <rdfs:subPropertyOf rdf:resource="#Slot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Property</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="Meronymic-Relation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Meronymic-Relation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#Relation"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#Agentive-Relation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Agentive-Relation</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#Relation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="EventProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EventProperty</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="#Property"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="Causal-Relation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Causal-Relation</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#Relation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="Property-Relation">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Property-Relation</rdfs:label>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->
